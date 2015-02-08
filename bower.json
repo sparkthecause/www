@@ -1,0 +1,17 @@
+{
+  "name": "Order-System",
+  "version": "0.1.0",
+  "homepage": "https://www.sparkthecause.com",
+  "authors": [
+    "Charles Burgess <consulting@cvburgess.com>"
+  ],
+  "description": "Main spark website",
+  "main": "server.js",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "bluebird": "~2.3.11",
+    "bootstrap": "~3.1.1",
+    "analytics": "~2.4.18"
+  }
+}
