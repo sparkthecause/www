@@ -1,5 +1,26 @@
+html, body {
+    height: 100%;
+}
 body {
     background-color: #8E59CD;
+    display: inline-block;
+    vertical-align: middle;
+}
+.vcontainer {
+    display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+           height: 90%;
+}
+.vcontainer > img {
+    width: 60%;
+
+    text-align: center;
 }
 .footer {
     position: absolute;
