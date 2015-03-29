@@ -13,11 +13,10 @@ body {
    align-items: center;
    -webkit-justify-content: center;
    justify-content: center;
-           height: 90%;
+   height: 90%;
 }
 .vcontainer > img {
     width: 60%;
-
     text-align: center;
 }
 .footer {
