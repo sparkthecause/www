@@ -4,12 +4,12 @@ var handler = StripeCheckout.configure({
     allowRememberMe: false,
     token: function(token) {
         $.ajax({
-            "type": POST,
-            "url": "https://api.sparkthecause.com/giveday",
+            "type": "POST",
+            "url": "https://api.sparkthecause.com/v0/giveday",
             "dataType": 'json',
             "data": {
                 "token": token,
-                "amount": numeral( numeral().unformat( $("#giveday_input").val() ) ).value() * 100;
+                "amount": numeral( numeral().unformat( $("#giveday_input").val() ) ).value() * 100
             }
         });
     }
