@@ -12,6 +12,7 @@
 
         <div class="header">
             <img class="logo" src="/assets/img/logo_white.png" height="50px" v-align="center"></img>
+            <img class="logo hidden-xs" src="/assets/img/give_day_logo.png" height="50px" v-align="center"></img>
         </div>
 
         <div class="footer">
@@ -25,7 +26,7 @@
                 </div>
             </form>
         </div>
-        
+
         <script src="/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="https://checkout.stripe.com/checkout.js"></script>
 
@@ -45,7 +46,8 @@
             handler.open({
               name: 'Spark: Donation',
               description: 'Animal Coalition of Tampa',
-              amount: 2000
+              amount: parseInt( parseFloat( $("#giveday_input").val() ) * 100 ),
+              panelLabel: "Donate"
             });
             e.preventDefault();
           });
