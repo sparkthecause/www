@@ -28,34 +28,9 @@
         </div>
 
         <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/numeral/min/numeral.min.js"></script>
         <script src="https://checkout.stripe.com/checkout.js"></script>
+        <script src="/assets/js/giveday.js"></script>
 
-        <script>
-          var handler = StripeCheckout.configure({
-            key: 'pk_test_fO3iJRyPAwmsujv8tId30Y2v',
-            image: '/assets/img/purple_circle_logo.png',
-            allowRememberMe: false,
-            token: function(token) {
-              // Use the token to create the charge with a server-side script.
-              // You can access the token ID with `token.id`
-            }
-          });
-
-          $('#donateBtn').on( 'click', function( e ) {
-            // Open Checkout with further options
-            handler.open({
-              name: 'Spark: Donation',
-              description: 'Animal Coalition of Tampa',
-              amount: parseInt( parseFloat( $("#giveday_input").val() ) * 100 ),
-              panelLabel: "Donate"
-            });
-            e.preventDefault();
-          });
-
-          // Close Checkout on page navigation
-          $(window).on('popstate', function() {
-            handler.close();
-          });
-        </script>
     </body>
 </html>

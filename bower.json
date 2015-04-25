@@ -13,6 +13,7 @@
     "bluebird": "~2.9.7",
     "bootstrap": "~3.3.2",
     "analytics": "~2.5.17",
-    "font-awesome": "~4.3.0"
+    "font-awesome": "~4.3.0",
+    "numeral": "~1.5.3"
   }
 }
