@@ -1,3 +1,30 @@
 body {
-    padding-top: 70px;
+    padding-top: 75px;
+}
+.navbar {
+    height: 75px;
+}
+.navbar-brand {
+    height: 75px;
+    padding: 20px;
+}
+.section-hero {
+    height: 400px;
+    background-color: #8e59cd;
+}
+.section-steps {
+    height: 400px;
+    background-color: #ffffff;
+}
+.section-causes {
+    height: 400px;
+    background-color: #5bcc5d;
+}
+.section-team {
+    height: 400px;
+    background-color: #64adfa;
+}
+.section-social {
+    height: 400px;
+    background-color: #f0625a;
 }
