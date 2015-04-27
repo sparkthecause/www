@@ -8,23 +8,35 @@ body {
     height: 75px;
     padding: 20px;
 }
-.section-hero {
+.section{
     height: 400px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+.section-hero-wrapper {
+    display:table;
+    width: 100%;
+}
+.section-hero {
     background-color: #8e59cd;
+    color: #ffffff;
+    display: table-cell;
+    vertical-align: middle;
 }
 .section-steps {
-    height: 400px;
     background-color: #ffffff;
+    color: #8e59cd;
 }
 .section-causes {
-    height: 400px;
     background-color: #5bcc5d;
+    color: #ffffff;
 }
 .section-team {
-    height: 400px;
     background-color: #64adfa;
+    color: #ffffff;
 }
 .section-social {
-    height: 400px;
     background-color: #f0625a;
+    color: #ffffff;
 }
