@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Spark</title>
+        <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="/giveday.css">
+    </head>
+
+    <body>
+
+        <div class="header">
+            <img class="logo" src="/assets/img/logo_white.png" height="50px" v-align="center"></img>
+            <img class="logo hidden-xs" src="/assets/img/give_day_logo.png" height="50px" v-align="center"></img>
+        </div>
+
+        <div class="footer">
+            <form class="form-inline">
+                <div class="input-group">
+                    <div class="input-group-addon input-lg">$</div>
+                    <input class="form-control input-lg" id="giveday_input" type="text" value="5.00">
+                    <span class="input-group-btn">
+                        <button id="donateBtn" class="btn btn-default btn-lg">Donate</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/numeral/min/numeral.min.js"></script>
+        <script src="https://checkout.stripe.com/checkout.js"></script>
+        <script src="/assets/js/giveday.js"></script>
+
+    </body>
+</html>

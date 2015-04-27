@@ -5,6 +5,7 @@ body {
     background-color: #8E59CD;
     display: inline-block;
     vertical-align: middle;
+    width: 100%;
 }
 .vcontainer {
     display: -webkit-flex;
