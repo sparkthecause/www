@@ -1,5 +1,6 @@
 body {
     padding-top: 75px;
+    background-color: #8e59cd;
 }
 h1, h2 {
     margin: 0px
@@ -44,5 +45,11 @@ h1, h2 {
 }
 .section-social {
     background-color: #f0625a;
+    color: #ffffff;
+}
+.footer {
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
     color: #ffffff;
 }
