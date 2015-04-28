@@ -55,6 +55,11 @@ h1 h2 {
     margin: -75px 0 0;
     background-clip: padding-box;
 }
+#cta {
+    color: #8e59cd;
+    border-color: #6a39a3;
+    border-width: 1px;
+}
 .section-steps {
     background-color: #ffffff;
     color: #8e59cd;
