@@ -35,10 +35,10 @@ h1 h2 {
     background-color: #ffffff;
 }
 .section{
-    min-height: 400px;
+    min-height: 330px;
     width: 100%;
     text-align: center;
-    padding: 40px 20px 40px 20px;
+    padding: 30px 20px 30px 20px;
 }
 .section-hero-wrapper {
     display:table;
@@ -99,6 +99,10 @@ h1 h2 {
     border-top: 75px solid transparent;
     margin: -75px 0 0;
     background-clip: padding-box;
+}
+.section-social a i {
+    color: #ffffff;
+    margin: 40px 10px 0px 10px;
 }
 .footer {
     height: 75px;
