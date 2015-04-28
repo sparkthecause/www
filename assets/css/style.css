@@ -43,6 +43,9 @@ h1 h2 {
 .row-pad {
     margin: 50px 0px 30px 0px;
 }
+.row-pad div {
+    margin-bottom: 10px;
+}
 .section-hero-wrapper {
     display:table;
     width: 100%;
