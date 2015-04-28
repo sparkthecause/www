@@ -93,6 +93,10 @@ h1 h2 {
 .mugshot img {
     max-height: 175px;
 }
+.mugshot a i {
+    color: #ffffff;
+    margin: 0px 5px 0px 5px;
+}
 .section-social {
     background-color: #f0625a;
     color: #ffffff;
@@ -104,7 +108,7 @@ h1 h2 {
 }
 .section-social a i {
     color: #ffffff;
-    margin: 40px 10px 0px 10px;
+    margin: 40px 10px 10px 20px;
 }
 .footer {
     height: 75px;
