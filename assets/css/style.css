@@ -1,7 +1,7 @@
 body {
     background-color: #8e59cd;
 }
-h1, h2 {
+h1 h2 {
     margin: 0px;
 }
 .navbar {
@@ -13,7 +13,6 @@ h1, h2 {
     color: #8e59cd;
     display: inline;
 }
-
 @media( max-width: 767px ) {
     .navbar .nav > li > a {
         line-height: 50px;
@@ -36,7 +35,7 @@ h1, h2 {
     background-color: #ffffff;
 }
 .section{
-    height: 400px;
+    min-height: 400px;
     width: 100%;
     text-align: center;
     padding: 40px 20px 40px 20px;
