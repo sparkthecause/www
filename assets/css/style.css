@@ -1,12 +1,15 @@
 body {
-    padding-top: 75px;
     background-color: #8e59cd;
 }
 h1, h2 {
-    margin: 0px
+    margin: 0px;
 }
 .navbar {
     height: 75px;
+}
+.navbar .nav > li > a {
+    line-height: 75px;
+    color: #8e59cd;
 }
 .navbar-brand {
     height: 75px;
@@ -16,10 +19,7 @@ h1, h2 {
     height: 400px;
     width: 100%;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px 20px 40px 20px;
 }
 .section-hero-wrapper {
     display:table;
@@ -30,22 +30,47 @@ h1, h2 {
     color: #ffffff;
     display: table-cell;
     vertical-align: middle;
+
+    position: relative;
+    border-top: 75px solid transparent;
+    margin: -75px 0 0;
+    background-clip: padding-box;
 }
 .section-steps {
     background-color: #ffffff;
     color: #8e59cd;
+
+    position: relative;
+    border-top: 75px solid transparent;
+    margin: -75px 0 0;
+    background-clip: padding-box;
 }
 .section-causes {
     background-color: #5bcc5d;
     color: #ffffff;
+
+    position: relative;
+    border-top: 75px solid transparent;
+    margin: -75px 0 0;
+    background-clip: padding-box;
 }
 .section-team {
     background-color: #64adfa;
     color: #ffffff;
+
+    position: relative;
+    border-top: 75px solid transparent;
+    margin: -75px 0 0;
+    background-clip: padding-box;
 }
 .section-social {
     background-color: #f0625a;
     color: #ffffff;
+
+    position: relative;
+    border-top: 75px solid transparent;
+    margin: -75px 0 0;
+    background-clip: padding-box;
 }
 .footer {
     height: 75px;
