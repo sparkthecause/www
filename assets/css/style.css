@@ -87,6 +87,10 @@ h1 h2 {
     margin: -75px 0 0;
     background-clip: padding-box;
 }
+.mugshot {
+    max-height: 175px;
+    margin: 20px 40px 10px 40px;
+}
 .section-social {
     background-color: #f0625a;
     color: #ffffff;
