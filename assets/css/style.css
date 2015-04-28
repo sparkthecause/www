@@ -5,15 +5,35 @@ h1, h2 {
     margin: 0px;
 }
 .navbar {
-    height: 75px;
+    min-height: 75px;
+    padding-right: 15px;
 }
 .navbar .nav > li > a {
     line-height: 75px;
     color: #8e59cd;
+    display: inline;
+}
+
+@media( max-width: 767px ) {
+    .navbar .nav > li > a {
+        line-height: 50px;
+        color: #8e59cd;
+        display: inline;
+    }
 }
 .navbar-brand {
     height: 75px;
     padding: 20px;
+}
+.navbar-brand > img {
+    height: 35px;
+}
+.hamburger {
+    margin-top: 20px;
+    color: #8e59cd;
+}
+.navbar-links > .in {
+    background-color: #ffffff;
 }
 .section{
     height: 400px;
