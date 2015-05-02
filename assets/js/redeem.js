@@ -7,7 +7,10 @@ $('#redeemBtn').on( 'click', function( e ) {
         "data": {
             "code": queryObject.code
         }
+    }).done( function( code ) {
+        location.reload();
     });
+
     e.preventDefault();
 
 });
@@ -25,7 +28,32 @@ $(document).ready( function(){
 
     if ( moment().isBetween( '2015-05-06', '2015-05-14') ) {
 
-        $('#redeemBtn').text( "Use Coupon on " + moment().format( "MMM Do" ) );
+        $.ajax({
+            "type": "GET",
+            "url": "http://localhost:8080/v0/giveday/redeem?code=" + queryObject.code
+        }).done( function( data ) {
+
+            if ( data.redeemed_at ) {
+
+                $('.footer').hide();
+                $('.instructions').html('<h4>Sorry, this coupon has already been redeemed.</h4>');
+                $('.header').css( 'background-color', '#f0625a');
+                $('body').css( 'background-color', '#f0625a');
+
+            } else {
+
+                $('#redeemBtn').text( "Use Coupon on " + moment().format( "MMM Do" ) );
+
+            }
+
+        }).fail( function( error ) {
+
+            $('.footer').hide();
+            $('.instructions').html('<h4>Sorry, we cant seem to find a coupon with that code.</h4>');
+            $('.header').css( 'background-color', '#f0625a');
+            $('body').css( 'background-color', '#f0625a');
+
+        });
 
     } else {
 
