@@ -1,9 +1,12 @@
 @font-face {
     font-family: 'Avenir';
-    src: url("/assets/avenir.ttc");
+    src: url("/assets/Avenir.ttc");
 }
 html, body {
     height: 100%;
+}
+a {
+    color: #FFFFFF;
 }
 body {
     background-color: #8E59CD;
@@ -50,6 +53,12 @@ body {
 }
 .header > img {
 	vertical-align: middle;
+}
+.content {
+    margin-top: 80px;
+    padding-top: 30px;
+}
+.content > img {
 	padding-left: 50px;
 	padding-right: 50px;
 }
@@ -86,4 +95,5 @@ body {
 #giveday_input {
     text-align: center;
     color: #8E59CD;
+    font-weight: bold;
 }
