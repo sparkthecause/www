@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url("/assets/avenir.ttc");
+}
 body {
     background-color: #8e59cd;
+    font-family: "Avenir";
 }
 h1 h2 {
     margin: 0px;
