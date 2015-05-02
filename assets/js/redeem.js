@@ -31,6 +31,19 @@ $(document).ready( function(){
 
         $('.footer').hide();
 
+        if ( moment().isBefore( '2015-05-06' ) ) {
+
+            $('.instructions').html('<h4> You can use this coupon from<br>May 6 - May 14, see you then!</h4>');
+
+        } else {
+
+            $('.instructions').html('<h4>Sorry, this coupon has expired.</h4>');
+
+        }
+
+        $('.header').css( 'background-color', '#f0625a');
+        $('body').css( 'background-color', '#f0625a');
+
     }
 
 });
