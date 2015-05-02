@@ -2,10 +2,12 @@ html, body {
     height: 100%;
 }
 body {
-    background-color: #FFFFFF;
+    background-color: #8E59CD;
+    color: #FFFFFF;
     display: inline-block;
     vertical-align: middle;
     width: 100%;
+    height: 500px;
 }
 .vcontainer {
     display: -webkit-flex;
@@ -21,7 +23,7 @@ body {
     text-align: center;
 }
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width:100%;
     height:76px;
@@ -45,6 +47,20 @@ body {
 	vertical-align: middle;
 	padding-left: 50px;
 	padding-right: 50px;
+}
+.offer {
+    margin-top: 80px;
+    padding-top: 1px;
+}
+.instructions{
+    padding: 5px;
+}
+.legal {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#redeemBtn {
+    color: #8E59CD;
 }
 
 /*  ALIGNMENT  */
