@@ -23,7 +23,10 @@ $('#donateBtn').on( 'click', function( e ) {
         name: 'Spark: Donation',
         description: 'Animal Coalition of Tampa',
         amount: donation,
-        panelLabel: "Donate"
+        panelLabel: "Donate",
+        closed: function() {
+            alert('Thank you for your donation!');
+        }
     });
 
     e.preventDefault();
