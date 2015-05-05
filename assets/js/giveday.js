@@ -25,7 +25,8 @@ $('#donateBtn').on( 'click', function( e ) {
         amount: donation,
         panelLabel: "Donate",
         closed: function() {
-            alert('Thank you for your donation!');
+            alert('Thank you for your donation.\nCheck your email, and enjoy your smoothie!');
+            $('#giveday_input').val('5.00');
         }
     });
 
