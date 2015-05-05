@@ -49,7 +49,7 @@
             <h4>Make any donation by May 5th for</h4>
 
             <br>
-            
+
             <img width="300px" src="/assets/img/BOGO.png"></img>
 
             <br>
@@ -81,5 +81,21 @@
         <script src="/bower_components/numeral/min/numeral.min.js"></script>
         <script src="https://checkout.stripe.com/checkout.js"></script>
         <script src="/assets/js/giveday.js"></script>
+        <!-- Facebook Conversion Code for Give Day 2015 -->
+        <script>(function() {
+          var _fbq = window._fbq || (window._fbq = []);
+          if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = '//connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+          }
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', '6024865723766', {'value': numeral( numeral().unformat( $("#giveday_input").val() ) ).format('0.00'), 'currency':'USD'}]);
+        </script>
+        <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6024865723766&amp;cd[value]=0.01&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
     </body>
 </html>
