@@ -30,7 +30,7 @@ $(document).ready( function(){
 
         $.ajax({
             "type": "GET",
-            "url": "http://localhost:8080/v0/giveday/redeem?code=" + queryObject.code
+            "url": "https://api.sparkthecause.com/v0/giveday/redeem?code=" + queryObject.code
         }).done( function( data ) {
 
             if ( data.redeemed_at ) {
