@@ -20,7 +20,10 @@ $(document).ready( function(){
     queryObject = {}
 
     if ( window.location.search.length > 1 ) {
-        
+        for (var aItKey, nKeyId = 0, aCouples = window.location.search.substr(1).split("&"); nKeyId < aCouples.length; nKeyId++) {
+            aItKey = aCouples[nKeyId].split("=");
+            queryObject[decodeURIComponent(aItKey[0])] = aItKey.length > 1 ? decodeURIComponent(aItKey[1]) : "";
+        }
     }
 
     if ( moment().isBetween( '2015-05-06', '2015-05-14') ) {
