@@ -6,10 +6,8 @@
   "homepage": "https://www.sparkthecause.com",
   "authors": [
     "Charles Burgess <consulting@cvburgess.com>"
-  ],
-  "main": "server.js",
+],
   "scripts": {
-    "start": "node server.js",
     "postinstall": "bower install"
   },
   "engines": {
@@ -17,7 +15,6 @@
     "npm": "2.5.x"
   },
   "dependencies": {
-    "bower": "^1.3.12",
-    "harp": "^0.15.0"
+    "bower": "^1.3.12"
   }
 }
