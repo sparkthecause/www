@@ -6,7 +6,6 @@
     "Charles Burgess <consulting@cvburgess.com>"
   ],
   "description": "Main spark website",
-  "main": "server.js",
   "private": true,
   "dependencies": {
     "jquery": "~2.1.3",
