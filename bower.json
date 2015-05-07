@@ -8,10 +8,8 @@
   "description": "Main spark website",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.3",
     "bluebird": "~2.9.7",
     "analytics": "~2.5.17",
-    "numeral": "~1.5.3",
     "moment": "~2.10.2"
   }
 }
