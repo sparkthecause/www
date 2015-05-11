@@ -2,17 +2,9 @@
 GENERAL
 ********************/
 
-::-moz-selection {
-    background: #8fc045;
-    color: #ffffff;
+html, body {
+    color: #323232;
 }
-
-::selection {
-    background: #8fc045;
-    color: #ffffff;
-}
-
-html, body {}
 
 .menu .wrapper, #links, #search, .title, #posts, .post, .post h3, .post p, .post ul, .post ol, .post .caption, .post .description, #posts footer, .response, #disqus, #notes, .page-title {
     width: 100%;
@@ -844,7 +836,7 @@ body, a, .navigation a, #links li a, .menu .menu-title a, .menu .nav-button .clo
 }
 
 a:hover, #links li:hover a, .menu .menu-title:hover a, #posts footer a:hover, .menu .nav-button:hover .close, .post-date:hover a, #notes .notes li a:hover {
-    color: #8fc045;
+    color: #8e59cd;
 }
 
 .navigation a:hover {
@@ -868,7 +860,7 @@ BACKGROUND COLOR
 }
 
 .navigation a:hover, .menu .nav-button:hover hr {
-    background: #8fc045;
+    background: #8e59cd;
 }
 
 #menu {
