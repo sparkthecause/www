@@ -44,48 +44,47 @@ body, .quote h3:before {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, blockquote {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+h1, h2, h3 {
+    font-family: 'Avenir-Black', Helvetica, Arial, sans-serif;
+}
+
+h4, h5, h6, blockquote {
+    font-family: 'Avenir-Roman', Helvetica, Arial, sans-serif;
 }
 
 h1 {
-    font-size: 3.333333em; /* 60px */
-    line-height: 1.1333333em; /* 68px */
-    font-weight: 300;
+    font-size: 60px;
+    line-height: 60px;
 }
 
 h2 {
-    font-size: 2.6666667em; /* 48px */
-    line-height: 1.1666667em; /* 56px */
-    font-weight: 300;
+    font-size: 42px;
+    line-height: 42px;
     margin-bottom: 30px !important;
 }
 
 h3 {
-    font-size: 2em; /* 36px */
-    line-height: 1.2222222em; /* 44px */
-    font-weight: 400;
+    font-size: 26px;
+    line-height: 26px;
     margin-bottom: 30px !important;
 }
 
 h4 {
-    font-size: 1.6666667em; /* 30px */
-    line-height: 1.2666667em; /* 38px */
-    font-weight: 400;
+    font-size: 26px;
+    line-height: 26px;
     margin-bottom: 20px !important;
 }
 
 h5 {
-    font-size: 1.3333333em; /* 24px */
-    line-height: 1.3333333em; /* 32px */
-    font-weight: 700;
+    font-size: 26px;
+    line-height: 26px;
     margin-bottom: 20px !important;
 }
 
 h6 {
-    font-size: 1em; /* 18px */
-    line-height: 1.4444444em; /* 26px */
-    font-weight: 700;
+
+    font-size: 26px;
+    line-height: 26px;
 }
 
 a {
