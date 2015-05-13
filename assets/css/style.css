@@ -72,6 +72,12 @@ h1 h2 {
     border-width: 1px;
     margin: 30px 0px 10px 0px;
 }
+#mc-embedded-subscribe, #mce-EMAIL{
+    color: #8e59cd;
+}
+#mc_embed_signup {
+    margin: 30px 0px 10px 0px;
+}
 .section-steps {
     background-color: #ffffff;
     color: #8e59cd;
