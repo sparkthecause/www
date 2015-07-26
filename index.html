@@ -55,61 +55,42 @@
             <div id="download" class="section section-hero">
                 <div class="container">
                     <div class="row row-pad">
-                        <div class="col-sm-6">
-                            <h1>Spark rewards charitable giving with<br>
-                                deals and discounts you can use<br>
-                                at your favorite locations all month long
+                        <div class="col-xs-12">
+
+                            <h1>
+                                This month we're<br>
+                                saving the whales
                             </h1>
-                        </div>
-                        <div class="col-sm-6">
 
-                        <div>
-                            <form class="form-horizontal">
-                              <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-10">
-                                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                                <div class="col-sm-10">
-                                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                  <div class="checkbox">
-                                    <label>
-                                      <input type="checkbox"> Remember me
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                  <button type="submit" class="btn btn-default">Sign in</button>
-                                </div>
-                              </div>
-                            </form>
-                        </div>
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                    <div id="cta" class="input-group">
 
-                            <button id="cta" type="button" class="btn btn-lg">Get notified when we launch</button>
+                                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="$5">
+                                        <div type="button" class="input-group-addon btn btn-lg">Join the Cause</div>
 
-                            <!-- Begin MailChimp Signup Form -->
-                            <div id="mc_embed_signup" class="hidden">
-                                <form class="form-inline" action="//sparkthecause.us10.list-manage.com/subscribe/post?u=3df45d5bfdc9ea65ce8f1050a&amp;id=800fde1bf1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                    <div class="form-group" id="mc_embed_signup_scroll">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" value="" placeholder="email@example.com" name="EMAIL" id="mce-EMAIL">
-                                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                        <div style="position: absolute; left: -5000px;"><input type="text" name="b_3df45d5bfdc9ea65ce8f1050a_800fde1bf1" tabindex="-1" value=""></div>
-                                        <button type="submit" class="btn btn-default" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Notify me!</button>
                                     </div>
-                                </form>
-                            </div>
-                            <!--End mc_embed_signup-->
+                                </div>
+                            </form>
+
                         </div>
+                        <!-- <div id="xs-space" class="col-xs-12 visible-xs"></div>
+                        <div class="col-sm-6 col-lg-4 col-lg-offset-1">
+
+                            <form class="form-inline">
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                    <div id="cta" class="input-group">
+                                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="$5">
+                                        <div type="button" class="input-group-addon btn btn-lg">Join the Cause</div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div> -->
 
                     </div>
                 </div>
@@ -222,11 +203,11 @@
             <div class="container">
                 <h1>Get in touch</h1>
                 <a href="https://www.facebook.com/SparkTheCause"><i class="fa fa-facebook-square fa-4x"></i></a>
-                <a href="https://twitter.com/sparkthecause"><i class="fa fa-twitter-square fa-4x"></i></a>
+                <!-- <a href="https://twitter.com/sparkthecause"><i class="fa fa-twitter-square fa-4x"></i></a> -->
                 <a href="https://instagram.com/sparkthecause"><i class="fa fa-instagram fa-4x"></i></a>
                 <br class="visible-xs">
-                <a href="https://github.com/sparkthecause"><i class="fa fa-github-square fa-4x"></i></a>
-                <a href="http://blog.sparkthecause.com"><i class="fa fa-pencil-square fa-4x"></i></a>
+                <!-- <a href="https://github.com/sparkthecause"><i class="fa fa-github-square fa-4x"></i></a> -->
+                <a href="http://blog.sparkthecause.com"><i class="fa fa-rss-square fa-4x"></i></a>
                 <a href="mailto:hello@sparkthecause.com"><i class="fa fa-envelope-square fa-4x"></i></a>
             </div>
         </div>
@@ -238,8 +219,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script>
             $('#cta').click( function( event ) {
-                $('#cta').toggleClass( "hidden" );
-                $('#mc_embed_signup').toggleClass( "hidden" );
+                // $('#cta').toggleClass( "hidden" );
+                // $('#mc_embed_signup').toggleClass( "hidden" );
             });
         </script>
     </body>
