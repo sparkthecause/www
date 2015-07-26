@@ -19,7 +19,7 @@ h1 h2 {
     color: #8e59cd;
     display: inline;
 }
-@media( max-width: 767px ) {
+@media (max-width: 767px) {
     .navbar .nav > li > a {
         line-height: 50px;
         color: #8e59cd;
@@ -64,6 +64,7 @@ h1 h2 {
     background-size: cover;
 }
 .section-hero {
+    color: #ffffff;
     display: table-cell;
     vertical-align: middle;
     position: relative;
@@ -72,11 +73,18 @@ h1 h2 {
     background-clip: padding-box;
 }
 .section-hero h1 {
-    color: #ffffff;
-    font-size: 42pt;
+    font-size: 3`2pt;
+}
+@media (min-width: 768px) {
+    .section-hero h1 {
+        font-size: 42pt;
+    }
+}
+.section-hero p {
+    font-size: 14pt;
 }
 #cta {
-    margin: 40px 0px 10px 0px;
+    margin: 40px 0px 40px 0px;
 }
 #cta * {
     border-width: 5px;
@@ -92,7 +100,7 @@ h1 h2 {
     font-weight: bold;
     text-align: center;
 }
-@media( min-width: 768px ) {
+@media (min-width: 768px) {
     #cta input {
         max-width: 200px;
     }
