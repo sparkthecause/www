@@ -38,7 +38,7 @@ h1 h2 {
     color: #8e59cd;
 }
 .navbar-links > .in {
-    background-color: #ffffff;
+    background-color: #f8f8f8;
 }
 .section{
     min-height: 330px;
@@ -47,7 +47,7 @@ h1 h2 {
     padding: 30px 20px 0px 20px;
 }
 .row-pad {
-    margin: 50px 0px 30px 0px;
+    margin: 50px 0px 10px 0px;
 }
 .row-pad div {
     margin-bottom: 10px;
@@ -97,7 +97,7 @@ h1 h2 {
 }
 #cta input {
     color: #8e59cd;
-    background-color: #ffffff;
+    background-color: #f8f8f8;
     box-shadow: inset 2px 2px 2px 0px #dddddd;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -125,7 +125,7 @@ h1 h2 {
     }
 }
 .section-steps {
-    background-color: #ffffff;
+    background-color: #f8f8f8;
     color: #8e59cd;
 
     position: relative;
@@ -137,7 +137,7 @@ h1 h2 {
     padding-bottom: 30px;
 }
 .section-causes {
-    background-color: #5bcc5d;
+    background-color: #8e59cd;
     color: #ffffff;
 
     position: relative;
@@ -152,8 +152,8 @@ h1 h2 {
     color: #8e59cd;
 }
 .section-team {
-    background-color: #64adfa;
-    color: #ffffff;
+    background-color: #f8f8f8;
+    color: #8e59cd;
 
     position: relative;
     border-top: 75px solid transparent;
@@ -171,7 +171,7 @@ h1 h2 {
     margin: 0px 5px 0px 5px;
 }
 .section-social {
-    background-color: #f0625a;
+    background-color: #8e59cd;
     color: #ffffff;
 
     position: relative;
@@ -183,7 +183,7 @@ h1 h2 {
 }
 .section-social a i {
     color: #ffffff;
-    margin: 40px 10px 10px 20px;
+    margin: 10px 10px 10px 20px;
 }
 .footer {
     height: 75px;
