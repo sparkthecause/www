@@ -1,13 +1,25 @@
 @font-face {
-    font-family: 'Avenir';
-    src: url("/assets/Avenir.ttc");
+  font-family: 'Avenir-Roman';
+  src: url('/assets/font/Avenir-Roman-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/font/Avenir-Roman-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/font/Avenir-Roman-webfont.svg') format('svg'); /* Legacy iOS */
 }
-body {
-    /*background-color: #8e59cd;*/
-    font-family: "Avenir";
+@font-face {
+  font-family: 'Avenir-Black';
+  src: url('/assets/font/Avenir-Black-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/font/Avenir-Black-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/font/Avenir-Black-webfont.svg') format('svg'); /* Legacy iOS */
 }
-h1 h2 {
+p {
+    font-family: "Avenir-Roman";
+}
+h1, h2 {
+    font-family: "Avenir-Black";
     margin: 0px;
+}
+h2 {
+    font-size: 32pt;
+    padding-top: 30px;
 }
 .navbar {
     min-height: 75px;
@@ -77,7 +89,7 @@ h1 h2 {
     padding-top: 0px;
 }
 .section-hero h1 {
-    font-size: 3`2pt;
+    font-size: 32pt;
 }
 @media (min-width: 768px) {
     .section-hero h1 {
