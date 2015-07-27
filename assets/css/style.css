@@ -153,6 +153,9 @@ h1 h2 {
     margin: -75px 0 0;
     background-clip: padding-box;
 }
+.mugshot {
+    padding-bottom: 30px;
+}
 .mugshot img {
     max-height: 175px;
 }
