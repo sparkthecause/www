@@ -136,6 +136,10 @@ h1 h2 {
 .how-step {
     padding-bottom: 30px;
 }
+.how-step i {
+    font-size: 80pt;
+    padding: 10px 0px 10px 0px;
+}
 .section-causes {
     background-color: #8e59cd;
     color: #ffffff;
