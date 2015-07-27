@@ -10,7 +10,7 @@
        url('/assets/font/Avenir-Black-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('/assets/font/Avenir-Black-webfont.svg') format('svg'); /* Legacy iOS */
 }
-p {
+p, h3 {
     font-family: "Avenir-Roman";
 }
 h1, h2 {
@@ -20,6 +20,9 @@ h1, h2 {
 h2 {
     font-size: 32pt;
     padding-top: 30px;
+}
+h3 {
+    font-weight: bold;
 }
 .navbar {
     min-height: 75px;
@@ -211,6 +214,9 @@ h2 {
 .section-social a i {
     color: #ffffff;
     margin: 10px 10px 10px 20px;
+}
+.section-social .container .row-pad {
+    margin-top: 30px;
 }
 .footer {
     height: 75px;
