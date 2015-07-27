@@ -149,11 +149,22 @@ h1 h2 {
     margin: -75px 0 0;
     background-clip: padding-box;
 }
+.section-causes a {
+    color: #ffffff;
+    text-decoration: underline;
+}
 .recent-cause {
     padding-bottom: 30px;
 }
 .thumbnail {
     color: #8e59cd;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: #ffffff;
+    padding: 0px;
+}
+.thumbnail img {
+    border-radius: 20px;
 }
 .section-team {
     background-color: #f8f8f8;
