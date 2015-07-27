@@ -24,6 +24,24 @@
 
     <body data-spy="scroll" data-target="#navbar">
 
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Join the Cause</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success">Donate Monthly</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="section-hero-wrapper">
 
             <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
@@ -72,7 +90,7 @@
                                     <div id="cta" class="input-group">
 
                                         <input type="text" class="form-control" id="exampleInputAmount" placeholder="$5">
-                                        <div type="button" class="input-group-addon btn btn-lg">Join the <br class="visible-xs">Cause</div>
+                                        <div type="button" class="input-group-addon btn btn-lg" data-toggle="modal" data-target="#myModal">Join the <br class="visible-xs">Cause</div>
 
                                     </div>
                                 </div>
