@@ -97,11 +97,13 @@ h1 h2 {
 #cta input {
     color: #8e59cd;
     background-color: #ffffff;
+    box-shadow: inset 2px 2px 2px 0px #dddddd;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     font-size: 24pt;
     font-weight: bold;
     text-align: center;
+    min-width: 75px;
 }
 @media (min-width: 768px) {
     #cta input {
@@ -115,6 +117,11 @@ h1 h2 {
     border-bottom-right-radius: 20px;
     font-size: 16pt;
     padding: 0px 30px 0px 30px;
+}
+@media (max-width: 767px) {
+    #cta div {
+        line-height: 24px;
+    }
 }
 .section-steps {
     background-color: #ffffff;
