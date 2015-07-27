@@ -55,6 +55,11 @@ h3 {
 .navbar-links > .in {
     background-color: #f8f8f8;
 }
+#navbar .active a {
+    font-weight: bolder;
+    background-color: #f8f8f8;
+    color: #8e59cd;
+}
 .section{
     min-height: 330px;
     width: 100%;
