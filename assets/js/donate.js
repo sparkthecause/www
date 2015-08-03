@@ -1,6 +1,6 @@
 $('#cta').on('click', function(e) {
 
-    var donation = numeral( numeral().unformat( $("#donationTxt").val() || "5" ) );
+    var donation = numeral( numeral().unformat( $("#cta input").val() || "5" ) );
     $("#donationTxt").val( donation.format("0,0.00") );
 
 });
@@ -27,6 +27,8 @@ var handler = StripeCheckout.configure({
 $('#donateBtn').on('click', function(e) {
 
     if ( validateDonationForm() ) {
+
+        $('#donationModal').modal('hide');
 
         var donation = numeral( numeral().unformat( $("#donationTxt").val() ) );
         var tip = numeral( numeral().unformat( $("#tipSelect").val() ) );
