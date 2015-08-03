@@ -11,14 +11,24 @@ var handler = StripeCheckout.configure({
     key: 'pk_test_fO3iJRyPAwmsujv8tId30Y2v',
     image: '/assets/img/checkout.png',
     token: function(token) {
-        // Use the token to create the charge with a server-side script.
-        // You can access the token ID with `token.id`
+        $.ajax({
+            "type": "POST",
+            "url": "https://api.sparkthecause.com/v1/register",
+            "dataType": 'json',
+            "data": {
+                "token": token,
+                "email": $("#emailTxt").val(),
+                "password": $("#passwordTxt").val(),
+                "donation": numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value(),
+                "tip": numeral( numeral().unformat( $("#tipSelect").val() ) ).multiply( 100 ).value()
+            }
+        });
     }
 });
 
 $('#donateBtn').on('click', function(e) {
 
-    var donation = numeral( numeral().unformat( $("#cta input").val() || "5" ) );
+    var donation = numeral( numeral().unformat( $("#donationTxt").val() ) );
     var tip = numeral( numeral().unformat( $("#tipSelect").val() ) );
 
     handler.open({
