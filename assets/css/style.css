@@ -101,6 +101,7 @@ label {
 }
 .section-hero h1 {
     font-size: 32pt;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
 }
 @media (min-width: 768px) {
     .section-hero h1 {
@@ -134,7 +135,7 @@ label {
         max-width: 200px;
     }
 }
-#cta div {
+#cta div[type="button"] {
     color: #ffffff;
     background-color: #8e59cd;
     border-top-right-radius: 20px;
@@ -143,7 +144,7 @@ label {
     padding: 0px 30px 0px 30px;
 }
 @media (max-width: 767px) {
-    #cta div {
+    #cta div[type="button"] {
         line-height: 24px;
     }
 }
