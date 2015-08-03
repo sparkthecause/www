@@ -1,8 +1,6 @@
 $('#cta').on('click', function(e) {
 
-    var raw_donation = numeral().unformat( $("#cta input").val() || "5" );
-    var donation = numeral( raw_donation );
-
+    var donation = numeral( numeral().unformat( $("#donationTxt").val() ) );
     $("#donationTxt").val( donation.format("0,0.00") );
 
 });
@@ -28,19 +26,48 @@ var handler = StripeCheckout.configure({
 
 $('#donateBtn').on('click', function(e) {
 
-    var donation = numeral( numeral().unformat( $("#donationTxt").val() ) );
-    var tip = numeral( numeral().unformat( $("#tipSelect").val() ) );
+    if ( validateDonationForm() ) {
 
-    handler.open({
-        name: 'Spark the Cause',
-        description: 'Monthly Donation & Tip',
-        email: $("#emailTxt").val(),
-        amount: donation.multiply( 100 ).value() + tip.multiply( 100 ).value(),
-        allowRememberMe: false,
-        panelLabel: "Donate"
-    });
-    e.preventDefault();
+        var donation = numeral( numeral().unformat( $("#donationTxt").val() ) );
+        var tip = numeral( numeral().unformat( $("#tipSelect").val() ) );
+
+        handler.open({
+            name: 'Spark the Cause',
+            description: 'Monthly Donation & Tip',
+            email: $("#emailTxt").val(),
+            amount: donation.multiply( 100 ).value() + tip.multiply( 100 ).value(),
+            allowRememberMe: false,
+            panelLabel: "Donate"
+        });
+        e.preventDefault();
+
+    }
+
 });
+
+function validateDonationForm() {
+
+    if ( document.getElementById("donationForm").checkValidity() ) {
+        return true;
+    }
+    else if ( $("#emailTxt").val() === "" ) {
+        alert( "Please enter a valid email address" );
+        return false;
+    }
+    else if ( $("#passwordTxt").val() === "" ) {
+        alert( "Please enter a valid password" );
+        return false;
+    }
+    else if ( $("#donationTxt").val() === "" || numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value() < 100 ) {
+        alert( "Please enter a valid donation of $1 or more" );
+        return false;
+    }
+    else {
+        alert( "Please be sure you entered a valid email address, password, and donation" );
+        return false;
+    }
+
+}
 
 // Close Checkout on page navigation
 $(window).on('popstate', function() {
