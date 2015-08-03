@@ -8,11 +8,15 @@ var handler = StripeCheckout.configure({
 });
 
 $('#donateBtn').on('click', function(e) {
+
+    var raw_donation = numeral().unformat( $("#cta input").val() || "5" );
+    var donation = numeral( raw_donation );
+
     handler.open({
         name: 'Spark the Cause',
         description: 'Monthly Donation & Tip',
-        email: "you@example.com",
-        amount: 2000,
+        email: $("#emailTxt").val(),
+        amount: donation.multiply( 100 ).value(),
         allowRememberMe: false,
         panelLabel: "Donate"
     });
