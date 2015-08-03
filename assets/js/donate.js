@@ -1,3 +1,12 @@
+$('#cta').on('click', function(e) {
+
+    var raw_donation = numeral().unformat( $("#cta input").val() || "5" );
+    var donation = numeral( raw_donation );
+
+    $("#donationTxt").val( donation.format("0,0.00") );
+
+});
+
 var handler = StripeCheckout.configure({
     key: 'pk_test_fO3iJRyPAwmsujv8tId30Y2v',
     image: '/assets/img/checkout.png',
