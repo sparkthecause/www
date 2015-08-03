@@ -1,6 +1,6 @@
 $('#cta').on('click', function(e) {
 
-    var donation = numeral( numeral().unformat( $("#donationTxt").val() ) );
+    var donation = numeral( numeral().unformat( $("#donationTxt").val() || "5" ) );
     $("#donationTxt").val( donation.format("0,0.00") );
 
 });
@@ -51,19 +51,19 @@ function validateDonationForm() {
         return true;
     }
     else if ( $("#emailTxt").val() === "" ) {
-        alert( "Please enter a valid email address" );
+        sweetAlert("Whoops!", "Please enter a valid email address", "warning");
         return false;
     }
     else if ( $("#passwordTxt").val() === "" ) {
-        alert( "Please enter a valid password" );
+        sweetAlert("Whoops!", "Please enter a valid password", "warning");
         return false;
     }
     else if ( $("#donationTxt").val() === "" || numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value() < 100 ) {
-        alert( "Please enter a valid donation of $1 or more" );
+        sweetAlert("Whoops!", "Please enter a valid donation of $1 or more", "warning");
         return false;
     }
     else {
-        alert( "Please be sure you entered a valid email address, password, and donation" );
+        sweetAlert("Whoops!", "Please be sure you entered a valid email address, password, and donation", "warning");
         return false;
     }
 
