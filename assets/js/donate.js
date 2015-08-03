@@ -18,14 +18,14 @@ var handler = StripeCheckout.configure({
 
 $('#donateBtn').on('click', function(e) {
 
-    var raw_donation = numeral().unformat( $("#cta input").val() || "5" );
-    var donation = numeral( raw_donation );
+    var donation = numeral( numeral().unformat( $("#cta input").val() || "5" ) );
+    var tip = numeral( numeral().unformat( $("#tipSelect").val() ) );
 
     handler.open({
         name: 'Spark the Cause',
         description: 'Monthly Donation & Tip',
         email: $("#emailTxt").val(),
-        amount: donation.multiply( 100 ).value(),
+        amount: donation.multiply( 100 ).value() + tip.multiply( 100 ).value(),
         allowRememberMe: false,
         panelLabel: "Donate"
     });
