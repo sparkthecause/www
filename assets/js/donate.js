@@ -11,7 +11,7 @@ var handler = StripeCheckout.configure({
     token: function(token) {
         $.ajax({
             "type": "POST",
-            "url": "https://api.sparkthecause.com/v1/register",
+            "url": "http://localhost:8080/v1/register",
             "dataType": 'json',
             "data": {
                 "token": token,
@@ -20,6 +20,11 @@ var handler = StripeCheckout.configure({
                 "donation": numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value(),
                 "tip": numeral( numeral().unformat( $("#tipSelect").val() ) ).multiply( 100 ).value()
             }
+        }).done( function() {
+            sweetAlert("Woohoo!", "Thank you for joining Spark the Cause!<br>You should receive a welcome email shortly.", "success");
+        })
+        .fail( function() {
+            sweetAlert("Whoops!", "Something went wrong during signup. Don't worry, your card has not been charged. Try refreshing the page and trying again, or contact us and we would be happy to help you out.", "warning");
         });
     }
 });
