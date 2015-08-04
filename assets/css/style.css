@@ -259,6 +259,30 @@ label {
     -o-background-size: cover;
     background-size: cover;
 }
+#login {
+    height: 90vh;
+}
+#loginForm {
+    background-color: #ffffff;
+    padding: 30px 20px 30px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.5);
+}
+#loginForm div {
+    margin: 0px 0px 20px 0px;
+}
+#loginForm label {
+    font-size: 20px;
+}
+#loginForm input {
+    text-align: center;
+}
+#loginForm button {
+    background-color: #8e59cd;
+    color: #ffffff;
+    margin-top: 10px;
+}
 #manageBtn {
     margin: 50px 0px 50px 0px;
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.5);
