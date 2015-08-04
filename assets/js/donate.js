@@ -21,7 +21,12 @@ var handler = StripeCheckout.configure({
                 "tip": numeral( numeral().unformat( $("#tipSelect").val() ) ).multiply( 100 ).value()
             }
         }).done( function() {
-            sweetAlert("Woohoo!", "Thank you for joining Spark the Cause!<br>You should receive a welcome email shortly.", "success");
+            sweetAlert({
+                "title": "Woohoo!",
+                "text": "Thank you for joining Spark the Cause!<br>You should receive a welcome email shortly.",
+                "type": "success",
+                "html": true
+            });
         })
         .fail( function() {
             sweetAlert("Whoops!", "Something went wrong during signup. Don't worry, your card has not been charged. Try refreshing the page and trying again, or contact us and we would be happy to help you out.", "warning");

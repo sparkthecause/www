@@ -43,7 +43,7 @@
                         </div>
                         <div id="navbar-links" class="collapse navbar-collapse">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Logout</a></li>
+                                <li><a id="logoutBtn" href="#">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                 <div id="login" class="section section-hero">
                     <div class="container">
                         <div class="row row-pad">
-                            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
 
                                 <h1>Login</h1>
                                 <form class="" id="loginForm">
@@ -64,7 +64,7 @@
                                         <label for="inputPassword3" class="control-label">Password</label>
                                         <input type="password" class="form-control" id="passwordTxt" placeholder="Password" required>
                                     </div>
-                                    <button type="submit" class="btn btn-lg">Submit</button>
+                                    <button id="loginBtn" type="submit" class="btn btn-lg">Submit</button>
                                 </form>
 
                             </div>
@@ -87,34 +87,32 @@
             </div>
         </div>
 
-        <div class="hidden">
-            <div id="cause-history" class="section section-cause-history">
-                <div class="container">
-                    <h2>Causes You've Supported</h2>
-                    <div class="row row-pad">
-                        <div class="col-xs-12">
-                            <p>None yet, but we're just getting started!</p>
-                            <br>
-                            <p><em><strong>Note:</strong> We bill on the first of the following month.<br>
-                                If you support this month's cause, it will appear here next month.</em></p>
-                        </div>
+        <div id="cause-history" class="section section-cause-history hidden">
+            <div class="container">
+                <h2>Causes You've Supported</h2>
+                <div class="row row-pad">
+                    <div class="col-xs-12">
+                        <p>None yet, but we're just getting started!</p>
+                        <br>
+                        <p><em><strong>Note:</strong> We bill on the first of the following month.<br>
+                            If you support this month's cause, it will appear here next month.</em></p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div id="social" class="section section-social">
-                <div class="container">
-                    <h2>Get in touch</h2>
-                    <div class="row row-pad">
-                        <div class="col-xs-12">
-                            <a href="https://www.facebook.com/SparkTheCause"><i class="fa fa-facebook-square fa-4x"></i></a>
-                            <!-- <a href="https://twitter.com/sparkthecause"><i class="fa fa-twitter-square fa-4x"></i></a> -->
-                            <a href="https://instagram.com/sparkthecause"><i class="fa fa-instagram fa-4x"></i></a>
-                            <br class="visible-xs">
-                            <!-- <a href="https://github.com/sparkthecause"><i class="fa fa-github-square fa-4x"></i></a> -->
-                            <a href="http://blog.sparkthecause.com"><i class="fa fa-rss-square fa-4x"></i></a>
-                            <a href="mailto:hello@sparkthecause.com"><i class="fa fa-envelope-square fa-4x"></i></a>
-                        </div>
+        <div id="social" class="section section-social hidden">
+            <div class="container">
+                <h2>Get in touch</h2>
+                <div class="row row-pad">
+                    <div class="col-xs-12">
+                        <a href="https://www.facebook.com/SparkTheCause"><i class="fa fa-facebook-square fa-4x"></i></a>
+                        <!-- <a href="https://twitter.com/sparkthecause"><i class="fa fa-twitter-square fa-4x"></i></a> -->
+                        <a href="https://instagram.com/sparkthecause"><i class="fa fa-instagram fa-4x"></i></a>
+                        <br class="visible-xs">
+                        <!-- <a href="https://github.com/sparkthecause"><i class="fa fa-github-square fa-4x"></i></a> -->
+                        <a href="http://blog.sparkthecause.com"><i class="fa fa-rss-square fa-4x"></i></a>
+                        <a href="mailto:hello@sparkthecause.com"><i class="fa fa-envelope-square fa-4x"></i></a>
                     </div>
                 </div>
             </div>
@@ -129,5 +127,6 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
         <script src="https://checkout.stripe.com/checkout.js"></script>
         <script src="/assets/js/sweetalert.min.js"></script>
+        <script src="/assets/js/login.js"></script>
     </body>
 </html>
