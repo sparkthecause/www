@@ -12,6 +12,7 @@
 }
 body {
     font-family: "Avenir-Roman";
+    background-color: #f8f8f8;
 }
 h1, h2 {
     font-family: "Avenir-Black";
@@ -64,7 +65,6 @@ label {
     color: #8e59cd;
 }
 .section{
-    min-height: 330px;
     width: 100%;
     text-align: center;
     padding: 30px 20px 0px 20px;
@@ -102,10 +102,12 @@ label {
 .section-hero h1 {
     font-size: 32pt;
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
+    line-height: 38pt;
 }
 @media (min-width: 768px) {
     .section-hero h1 {
         font-size: 42pt;
+        line-height: 54pt;
     }
 }
 .section-hero p {
@@ -152,7 +154,6 @@ label {
     }
 }
 .section-steps {
-    background-color: #f8f8f8;
     color: #8e59cd;
 
     position: relative;
@@ -194,7 +195,6 @@ label {
     border-radius: 20px;
 }
 .section-team {
-    background-color: #f8f8f8;
     color: #8e59cd;
 
     position: relative;
@@ -241,4 +241,37 @@ label {
 }
 .modal-text {
     padding: 10px 0px 0px 0px;
+}
+
+/* ACCOUNT PAGE SPECIFIC*/
+
+.section-top-wrapper {
+    display:table;
+    width: 100%;
+    /*height: 90vh;*/
+
+    background-image: url(/assets/img/hero_account.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-position: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#manageBtn {
+    margin: 50px 0px 50px 0px;
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border-width: 5px;
+    background-color: #8e59cd;
+    color: #ffffff;
+    border-color: #ffffff;
+    height: 80px;
+}
+.section-cause-history {
+    padding-bottom: 30px;
+}
+.section-cause-history h2 {
+    color: #8e59cd;
 }
