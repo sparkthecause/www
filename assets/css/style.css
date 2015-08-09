@@ -338,6 +338,9 @@ label {
     border-color: #ffffff;
     height: 80px;
 }
+#paymentTxt {
+    margin-top: 6px;
+}
 .section-cause-history {
     padding-bottom: 30px;
 }

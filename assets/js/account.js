@@ -96,3 +96,57 @@ $(document).on( 'click', '#logoutBtn', function() {
     location.reload();
 
 });
+
+var handler = StripeCheckout.configure({
+    key: 'pk_test_fO3iJRyPAwmsujv8tId30Y2v',
+    image: '/assets/img/checkout.png',
+    token: function(token) {
+
+        $("#tokenTxt").val( token.id );
+        $("#paymentTxt").text( token.card.brand + " ending in ..." + token.card.last4 );
+        console.log(token);
+
+    }
+});
+
+$(document).on( 'click', '#newCardBtn', function() {
+
+    if ( validateAccountForm() ) {
+
+        handler.open({
+            name: 'Spark the Cause',
+            description: 'Monthly Donation & Tip',
+            email: $("#emailTxt").val(),
+            amount: 0,
+            allowRememberMe: false,
+            panelLabel: "Save Card"
+        });
+
+    }
+
+});
+
+function validateAccountForm() {
+
+    if ( document.getElementById("accountForm").checkValidity() ) {
+        return true;
+    }
+    else if ( $("#emailTxt").val() === "" ) {
+        sweetAlert("Whoops!", "Please enter a valid email address", "warning");
+        return false;
+    }
+    else if ( $("#donationTxt").val() === "" || numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value() < 100 ) {
+        sweetAlert("Whoops!", "Please enter a valid donation of $1 or more", "warning");
+        return false;
+    }
+    else {
+        sweetAlert("Whoops!", "Please be sure you entered a valid email address and donation", "warning");
+        return false;
+    }
+
+}
+
+// Close Checkout on page navigation
+$(window).on('popstate', function() {
+    handler.close();
+});

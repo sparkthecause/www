@@ -23,7 +23,7 @@
                                 <div class="form-group">
                                     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="passwordTxt" placeholder="Password" required>
+                                        <input type="password" class="form-control" id="passwordTxt" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -45,7 +45,16 @@
                                         </select>
                                     </div>
                                 </div>
-                                <p class="help-block col-sm-offset-2">Explain why tips help us survive here</p>
+
+                                <!-- <p class="help-block col-sm-offset-2">Explain why tips help us survive here</p> -->
+
+                                <div class="form-group">
+                                    <label for="inputCC" class="col-sm-2 control-label">Payment</label>
+                                    <div class="col-sm-10">
+                                        <p id="paymentTxt">{{source_name}} ending in ...{{source_last_four}} &nbsp;&nbsp; <a href="#" id="newCardBtn">Use a different card</a></p>
+                                        <input type="hidden" class="form-control" id="tokenTxt">
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
