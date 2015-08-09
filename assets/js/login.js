@@ -1,7 +1,11 @@
 $(document).ready(function() {
 
     Handlebars.registerHelper('dollars', function( item, options ) {
-        return numeral( item ).divide( 100 ).format('$0,0.00');
+        return numeral( item ).divide( 100 ).format('0,0.00');
+    });
+
+    Handlebars.registerHelper('selected', function( value1, value2 ) {
+        return ( value1.toString() === value2.toString() ) ? ' selected' : '';
     });
 
     var emailCookie = Cookies.get( "email" );
