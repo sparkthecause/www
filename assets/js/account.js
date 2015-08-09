@@ -104,7 +104,6 @@ var handler = StripeCheckout.configure({
 
         $("#tokenTxt").val( token.id );
         $("#paymentTxt").text( token.card.brand + " ending in ..." + token.card.last4 );
-        console.log(token);
 
     }
 });
@@ -120,6 +119,40 @@ $(document).on( 'click', '#newCardBtn', function() {
             amount: 0,
             allowRememberMe: false,
             panelLabel: "Save Card"
+        });
+
+    }
+
+});
+
+$(document).on( 'click', '#updateBtn', function() {
+
+    if ( validateAccountForm() ) {
+
+        var jsonData = {
+            "email": $("#emailTxt").val(),
+            "password": $("#passwordTxt").val() || undefined,
+            "token": $("#tokenTxt").val() || undefined,
+            "donation": numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value(),
+            "tip": numeral( numeral().unformat( $("#tipSelect").val() ) ).multiply( 100 ).value()
+        };
+
+        console.log(jsonData);
+
+        $.ajax({
+            "type": "PUT",
+            "url": "https://api-dev.sparkthecause.com/v1/users/",
+            "dataType": 'json',
+            "data": jsonData
+        }).done( function() {
+            sweetAlert({
+                "title": "Success!",
+                "text": "Your account has been updated, give yourself a hi-five.",
+                "type": "success"
+            });
+        })
+        .fail( function() {
+            sweetAlert("Whoops!", "Something went wrong. Refresh the page and try again, or contact us - we would be happy to help you out.", "warning");
         });
 
     }
