@@ -1,3 +1,11 @@
+$(document).ready(function() {
+
+    Handlebars.registerHelper('dollars', function( item, options ) {
+        return numeral( item ).divide( 100 ).format('$0,0.00');
+    });
+
+});
+
 $('#loginBtn').on('click', function(e) {
 
     if ( validateLoginForm() ) {
@@ -24,11 +32,7 @@ $('#loginBtn').on('click', function(e) {
             }).done( function( user ) {
 
                 // Load UI data with handlebars
-
-                $("#login").addClass("hidden");
-                $("#manage").removeClass("hidden");
-                $("#cause-history").removeClass("hidden");
-                $("#social").removeClass("hidden");
+                $("#content").render( "account", user );
 
             })
             .fail( function() {
