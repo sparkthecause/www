@@ -53,7 +53,7 @@ function login( email, password ) {
 
     $.ajax({
         "type": "POST",
-        "url": "https://api-dev.sparkthecause.com/v1/login",
+        "url": "https://api.sparkthecause.com/v1/login",
         "dataType": 'json',
         "data": {
             "email": email,
@@ -66,7 +66,7 @@ function login( email, password ) {
 
         $.ajax({
             "type": "GET",
-            "url": "https://api-dev.sparkthecause.com/v1/users/" + user_id.user_id,
+            "url": "https://api.sparkthecause.com/v1/users/" + user_id.user_id,
             "dataType": 'json',
             headers: {
               "Authorization": "Basic " + btoa( email + ':' + password )
@@ -141,7 +141,7 @@ $(document).on( 'click', '#updateBtn', function() {
 
         $.ajax({
             "type": "PUT",
-            "url": "https://api-dev.sparkthecause.com/v1/users/",
+            "url": "https://api.sparkthecause.com/v1/users/",
             "dataType": 'json',
             "data": jsonData
         }).done( function() {

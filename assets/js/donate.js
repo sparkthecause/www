@@ -11,7 +11,7 @@ var handler = StripeCheckout.configure({
     token: function(token) {
         $.ajax({
             "type": "POST",
-            "url": "https://api-dev.sparkthecause.com/v1/register",
+            "url": "https://api.sparkthecause.com/v1/register",
             "dataType": 'json',
             "data": {
                 "token": token,
