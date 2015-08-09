@@ -6,7 +6,7 @@ $('#loginBtn').on('click', function(e) {
 
         $.ajax({
             "type": "POST",
-            "url": "http://localhost:8080/v1/login",
+            "url": "https://api-dev.sparkthecause.com/v1/login",
             "dataType": 'json',
             "data": {
                 "email": $("#emailTxt").val(),
@@ -16,7 +16,7 @@ $('#loginBtn').on('click', function(e) {
 
             $.ajax({
                 "type": "GET",
-                "url": "http://localhost:8080/v1/users/" + user_id.user_id,
+                "url": "https://api-dev.sparkthecause.com/v1/users/" + user_id.user_id,
                 "dataType": 'json',
                 headers: {
                   "Authorization": "Basic " + btoa( $("#emailTxt").val() + ':' + $("#passwordTxt").val() )
