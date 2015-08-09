@@ -4,6 +4,13 @@ $(document).ready(function() {
         return numeral( item ).divide( 100 ).format('$0,0.00');
     });
 
+    var emailCookie = Cookies.get( "email" );
+    var passwordCookie =Cookies.get( "password" );
+
+    if ( emailCookie && passwordCookie ) {
+        login( emailCookie, passwordCookie );
+    }
+
 });
 
 $('#loginBtn').on('click', function(e) {
@@ -12,37 +19,7 @@ $('#loginBtn').on('click', function(e) {
 
         e.preventDefault();
 
-        $.ajax({
-            "type": "POST",
-            "url": "https://api-dev.sparkthecause.com/v1/login",
-            "dataType": 'json',
-            "data": {
-                "email": $("#emailTxt").val(),
-                "password": $("#passwordTxt").val()
-            }
-        }).done( function( user_id ) {
-
-            $.ajax({
-                "type": "GET",
-                "url": "https://api-dev.sparkthecause.com/v1/users/" + user_id.user_id,
-                "dataType": 'json',
-                headers: {
-                  "Authorization": "Basic " + btoa( $("#emailTxt").val() + ':' + $("#passwordTxt").val() )
-                }
-            }).done( function( user ) {
-
-                // Load UI data with handlebars
-                $("#content").render( "account", user );
-
-            })
-            .fail( function() {
-                sweetAlert("Whoops!", "We ran into an issue grabbing your account info. We're really sorry! Please refresh the page and try again or contact us for a helping hand.", "warning");
-            });
-
-        })
-        .fail( function() {
-            sweetAlert("Whoops!", "That email address and password don't seem to match", "warning");
-        });
+        login( $("#emailTxt").val(), $("#passwordTxt").val() );
 
     }
 
@@ -68,13 +45,50 @@ function validateLoginForm() {
 
 }
 
-$('#logoutBtn').on('click', function(e) {
+function login( email, password ) {
 
-    // clear cookies
+    $.ajax({
+        "type": "POST",
+        "url": "https://api-dev.sparkthecause.com/v1/login",
+        "dataType": 'json',
+        "data": {
+            "email": email,
+            "password": password
+        }
+    }).done( function( user_id ) {
 
-    $("#login").removeClass("hidden");
-    $("#manage").addClass("hidden");
-    $("#cause-history").addClass("hidden");
-    $("#social").addClass("hidden");
+        Cookies.set( "email", email, { expires: 14 } );
+        Cookies.set( "password", password, { expires: 14 } );
+
+        $.ajax({
+            "type": "GET",
+            "url": "https://api-dev.sparkthecause.com/v1/users/" + user_id.user_id,
+            "dataType": 'json',
+            headers: {
+              "Authorization": "Basic " + btoa( email + ':' + password )
+            }
+        }).done( function( user ) {
+
+            // Load UI data with handlebars
+            $("#content").render( "account", user );
+
+        })
+        .fail( function() {
+            sweetAlert("Whoops!", "We ran into an issue grabbing your account info. We're really sorry! Please refresh the page and try again or contact us for a helping hand.", "warning");
+        });
+
+    })
+    .fail( function() {
+        sweetAlert("Whoops!", "That email address and password don't seem to match", "warning");
+    });
+
+}
+
+$(document).on( 'click', '#logoutBtn', function() {
+
+    Cookies.remove( "email" );
+    Cookies.remove( "password" );
+
+    location.reload();
 
 });
