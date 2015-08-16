@@ -5,6 +5,13 @@ $('#cta').on('click', function(e) {
 
 });
 
+$('#is_monthly').on('click', function(e) {
+
+    var donateBtnTxt = ( $('#is_monthly').is(":checked") ) ? "Donate Monthly" : "Donate";
+    $('#donateBtn').text( donateBtnTxt );
+
+});
+
 var handler = StripeCheckout.configure({
     key: 'pk_test_fO3iJRyPAwmsujv8tId30Y2v',
     image: '/assets/img/checkout.png',
@@ -18,7 +25,8 @@ var handler = StripeCheckout.configure({
                 "email": $("#emailTxt").val(),
                 "password": $("#passwordTxt").val(),
                 "donation": numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value(),
-                "tip": numeral( numeral().unformat( $("#tipSelect").val() ) ).multiply( 100 ).value()
+                "tip": numeral( numeral().unformat( $("#tipSelect").val() ) ).multiply( 100 ).value(),
+                "frequency": ( $("#is_monthly").is(":checked") ) ? "monthly" : "one-time"
             }
         }).done( function() {
             sweetAlert({
