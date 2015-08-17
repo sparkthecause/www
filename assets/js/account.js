@@ -9,7 +9,7 @@ $(document).ready(function() {
     });
 
     var emailCookie = Cookies.get( "email" );
-    var passwordCookie =Cookies.get( "password" );
+    var passwordCookie = Cookies.get( "password" );
 
     if ( emailCookie && passwordCookie ) {
         login( emailCookie, passwordCookie );
@@ -66,13 +66,14 @@ function login( email, password ) {
 
         $.ajax({
             "type": "GET",
-            "url": "https://api.sparkthecause.com/v1/users/" + user_id.user_id,
+            "url": "https://api.sparkthecause.com/v1/users",
             "dataType": 'json',
-            headers: {
+            "headers": {
               "Authorization": "Basic " + btoa( email + ':' + password )
             }
-        }).done( function( user ) {
+        }).done( function( users ) {
 
+            var user = users.users[0];
             // Load UI data with handlebars
             $("#content").render( "account", user );
 
@@ -130,26 +131,40 @@ $(document).on( 'click', '#updateBtn', function() {
     if ( validateAccountForm() ) {
 
         var jsonData = {
-            "email": $("#emailTxt").val(),
+            "email": $("#emailTxt").val() || undefined,
             "password": $("#passwordTxt").val() || undefined,
             "token": $("#tokenTxt").val() || undefined,
             "donation": numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value(),
             "tip": numeral( numeral().unformat( $("#tipSelect").val() ) ).multiply( 100 ).value()
         };
 
-        console.log(jsonData);
+        var emailCookie = Cookies.get( "email" );
+        var passwordCookie =Cookies.get( "password" );
 
         $.ajax({
             "type": "PUT",
             "url": "https://api.sparkthecause.com/v1/users/",
             "dataType": 'json',
-            "data": jsonData
+            "data": jsonData,
+            "headers": {
+              "Authorization": "Basic " + btoa( emailCookie + ':' + passwordCookie )
+            }
         }).done( function() {
+
+            if ( $("#emailTxt").val() ) {
+                Cookies.set( "email", $("#emailTxt").val(), { expires: 14 } );
+            }
+
+            if ( $("#passwordTxt").val() ) {
+                Cookies.set( "password", $("#passwordTxt").val(), { expires: 14 } );
+            }
+
             sweetAlert({
                 "title": "Success!",
                 "text": "Your account has been updated, give yourself a hi-five.",
                 "type": "success"
             });
+
         })
         .fail( function() {
             sweetAlert("Whoops!", "Something went wrong. Refresh the page and try again, or contact us - we would be happy to help you out.", "warning");
