@@ -205,6 +205,10 @@ label {
     font-size: 80pt;
     padding: 10px 0px 10px 0px;
 }
+.step-img {
+    height: 200px;
+    width: 200px;
+}
 .section-causes {
     background-color: #8e59cd;
     color: #ffffff;
