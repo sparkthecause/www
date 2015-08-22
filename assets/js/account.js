@@ -75,7 +75,11 @@ function login( email, password ) {
 
             var user = users.users[0];
             // Load UI data with handlebars
-            $("#content").render( "account", user );
+            if ( user.is_monthly ) {
+                $("#content").render( "account", user );
+            } else {
+                $("#content").render( "one-timer", user );
+            }
 
         })
         .fail( function() {
@@ -163,6 +167,8 @@ $(document).on( 'click', '#updateBtn', function() {
                 "title": "Success!",
                 "text": "Your account has been updated, give yourself a hi-five.",
                 "type": "success"
+            }, function() {
+                $("#accountModal").modal("hide");
             });
 
         })
@@ -193,6 +199,38 @@ function validateAccountForm() {
     }
 
 }
+
+$(document).on( 'click', '#convertBtn', function() {
+
+    var emailCookie = Cookies.get( "email" );
+    var passwordCookie =Cookies.get( "password" );
+
+    $.ajax({
+        "type": "PUT",
+        "url": "https://api.sparkthecause.com/v1/users/",
+        "dataType": 'json',
+        "data": {
+            "frequency": "monthly"
+        },
+        "headers": {
+          "Authorization": "Basic " + btoa( emailCookie + ':' + passwordCookie )
+        }
+    }).done( function() {
+
+        sweetAlert({
+            "title": "Success!",
+            "text": "Thank you for becoming a monthly member! You just racked up some serious karma.",
+            "type": "success"
+        }, function() {
+            location.reload();
+        });
+
+    })
+    .fail( function() {
+        sweetAlert("Whoops!", "Something went wrong. Refresh the page and try again, or contact us - we would be happy to help you out.", "warning");
+    });
+
+});
 
 // Close Checkout on page navigation
 $(window).on('popstate', function() {

@@ -320,7 +320,7 @@ label {
     color: #ffffff;
     margin-top: 10px;
 }
-#manageBtn {
+#manage button {
     margin: 50px 0px 50px 0px;
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
