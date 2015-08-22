@@ -286,6 +286,10 @@ label {
 
 /* ACCOUNT PAGE SPECIFIC*/
 
+.90vh {
+    height: 90vh;
+}
+
 .section-top-wrapper {
     display:table;
     width: 100%;
@@ -302,6 +306,9 @@ label {
 }
 #login {
     height: 90vh;
+}
+#manage.vh100 {
+    height: 100vh;
 }
 #loginForm {
     background-color: #ffffff;
