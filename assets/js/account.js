@@ -103,7 +103,7 @@ $(document).on( 'click', '#logoutBtn', function() {
 });
 
 var handler = StripeCheckout.configure({
-    key: 'pk_test_fO3iJRyPAwmsujv8tId30Y2v',
+    key: 'pk_live_Wr0hlRAewCXSRdiL8BDTYmK8',
     image: '/assets/img/checkout.png',
     token: function(token) {
 
