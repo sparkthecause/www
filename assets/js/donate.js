@@ -26,7 +26,7 @@ var handler = StripeCheckout.configure({
                 "password": $("#passwordTxt").val(),
                 "donation": numeral( numeral().unformat( $("#donationTxt").val() ) ).multiply( 100 ).value(),
                 "tip": numeral( numeral().unformat( $("#tipSelect").val() ) ).multiply( 100 ).value(),
-                "frequency": ( $("#is_monthly").is(":checked") ) ? "monthly" : "one-time"
+                "frequency": ( $("#is_monthly").is(":checked") ) ? "one-time" : "monthly"
             }
         }).done( function() {
             sweetAlert({
