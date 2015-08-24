@@ -93,3 +93,9 @@ function validateDonationForm() {
 $(window).on('popstate', function() {
     handler.close();
 });
+
+$('#causeBtn').on('click', function(e) {
+
+    document.location = "/causes";
+
+});
