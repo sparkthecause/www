@@ -7,7 +7,7 @@ $('#cta').on('click', function(e) {
 
 $('#is_monthly').on('click', function(e) {
 
-    var donateBtnTxt = ( $('#is_monthly').is(":checked") ) ? "Donate Monthly" : "Donate";
+    var donateBtnTxt = ( $('#is_monthly').is(":checked") ) ? "Donate" : "Donate Monthly";
     $('#donateBtn').text( donateBtnTxt );
 
 });
