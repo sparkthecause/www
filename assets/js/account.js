@@ -169,6 +169,7 @@ $(document).on( 'click', '#updateBtn', function() {
                 "type": "success"
             }, function() {
                 $("#accountModal").modal("hide");
+                location.reload();
             });
 
         })
