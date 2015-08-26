@@ -93,207 +93,210 @@
             </div>
         </div>
 
-        <div class="section-hero-wrapper">
+        <div class="wrap-modal-fix">
+            <div class="section-hero-wrapper">
 
-            <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
+                <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
 
-                        <a class="navbar-brand" href="#">
-                            <img alt="Spark" src="/assets/img/logo.png">
-                        </a>
+                            <a class="navbar-brand" href="#">
+                                <img alt="Spark" src="/assets/img/logo.png">
+                            </a>
 
-                        <button type="button" class="navbar-toggle collapsed hamburger" data-toggle="collapse" data-target="#navbar-links">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+                            <button type="button" class="navbar-toggle collapsed hamburger" data-toggle="collapse" data-target="#navbar-links">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+
+                        <div id="navbar-links" class="collapse navbar-collapse">
+
+                          <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#steps">How it works</a></li>
+                            <li><a href="#causes">Causes</a></li>
+                            <li><a href="#team">Our team</a></li>
+                            <li><a href="#social">Get in touch</a></li>
+                            <li><a href="/account" style="color: #5a5a5a;">My Account</a></li>
+                          </ul>
+                        </div>
                     </div>
+                </nav>
 
+                <div id="download" class="section section-hero">
+                    <div class="container">
+                        <div class="row row-pad">
+                            <div class="col-xs-12">
 
-                    <div id="navbar-links" class="collapse navbar-collapse">
+                                <h1>
+                                    Make a donation and watch it do something incredible every month
+                                </h1>
 
-                      <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#steps">How it works</a></li>
-                        <li><a href="#causes">Causes</a></li>
-                        <li><a href="#team">Our team</a></li>
-                        <li><a href="#social">Get in touch</a></li>
-                        <li><a href="/account" style="color: #5a5a5a;">My Account</a></li>
-                      </ul>
-                    </div>
-                </div>
-            </nav>
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                        <div id="cta" class="input-group">
 
-            <div id="download" class="section section-hero">
-                <div class="container">
-                    <div class="row row-pad">
-                        <div class="col-xs-12">
+                                            <input type="text" class="form-control" id="exampleInputAmount" placeholder="$5">
+                                            <div type="button" class="input-group-addon btn btn-lg" data-toggle="modal" data-target="#donationModal">Join the <br class="visible-xs">Cause</div>
 
-                            <h1>
-                                Make a donation and watch it do something incredible every month
-                            </h1>
-
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                                    <div id="cta" class="input-group">
-
-                                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="$5">
-                                        <div type="button" class="input-group-addon btn btn-lg" data-toggle="modal" data-target="#donationModal">Join the <br class="visible-xs">Cause</div>
-
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
 
-                            <p>
-                                Sound interesting?<br>
-                                Learn about us and the causes we support below
-                            </p>
+                                <p>
+                                    Sound interesting?<br>
+                                    Learn about us and the causes we support below
+                                </p>
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="cause" class="section section-cause">
-            <div class="container">
-                <h2>This month we are connecting kids with tech</h2>
-                <div class="row row-pad">
-                    <div class="col-xs-12">
-                        <img class="causeImg" src="/assets/img/cause_aug_15.jpg" alt="Pepin Academies">
-                    </div>
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <p>
-                            September is the height of back to school season, and to celebrate, we've partnered with Pepin Academies.
-                            For over fifteen years, Pepin Academies, a Hillsborough County Public Charter School has helped hundreds of students with learning and related disabilities graduate high school, go to college, and find jobs.
-                            For students struggling with disabilities, those are not easy tasks.
-                            Like most schools, budgets are tight, so we want to ask for your help to empower these students with enhanced classroom technology.
-                        </p>
-                    </div>
-                    <div class="col-xs-12">
-                        <button id="causeBtn" type="button" class="btn">&nbsp;Learn More&nbsp;</button>
+            <div id="cause" class="section section-cause">
+                <div class="container">
+                    <h2>This month we are connecting kids with tech</h2>
+                    <div class="row row-pad">
+                        <div class="col-xs-12">
+                            <img class="causeImg" src="/assets/img/cause_aug_15.jpg" alt="Pepin Academies">
+                        </div>
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <p>
+                                September is the height of back to school season, and to celebrate, we've partnered with Pepin Academies.
+                                For over fifteen years, Pepin Academies, a Hillsborough County Public Charter School has helped hundreds of students with learning and related disabilities graduate high school, go to college, and find jobs.
+                                For students struggling with disabilities, those are not easy tasks.
+                                Like most schools, budgets are tight, so we want to ask for your help to empower these students with enhanced classroom technology.
+                            </p>
+                        </div>
+                        <div class="col-xs-12">
+                            <button id="causeBtn" type="button" class="btn">&nbsp;Learn More&nbsp;</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="steps" class="section section-steps">
-            <div class="container">
-                <h2>How it works</h2>
-                <div class="row row-pad">
-                    <div class="col-sm-4 how-step">
-                        <img class="step-img" src="/assets/img/discover.png">
-                        <h3>Discover</h3>
-                        <p>Every month we select a new cause<br class="hidden-xs hidden-sm">
-                            to support, everything from autisim to zebras<br><br>
-                            <!--We partner with the best charities to turn<br class="hidden-sm">
-                            your donation into action-->
-                        </p>
-                    </div>
-                    <div class="col-sm-4 how-step">
-                        <img class="step-img" src="/assets/img/donate.png">
-                        <h3>Donate</h3>
-                        <p>Give what you can, and every month<br class="hidden-xs hidden-sm">
-                            <strong>100%</strong> will go directly to the cause<br><br>
-                            <!--You can change your donation at<br class="hidden-sm">
-                            any time, because life is unpredictable-->
-                        </p>
-                    </div>
-                    <div class="col-sm-4 how-step">
-                        <img class="step-img" src="/assets/img/share.png">
-                        <h3>See and Share</h3>
-                        <p>Once the funds we raise are put to use,<br class="hidden-xs hidden-sm">
-                            you'll get an email showing the impact you made<br><br>
-                            <!--Forward to a friend so we can tackle bigger<br class="hidden-sm">
-                            causes and make a larger impact each month-->
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="causes" class="section section-causes">
-            <div class="container">
-                <h2>Causes we've supported</h2>
-                <div class="row row-pad">
-
-                    <div class="recent-cause col-sm-6 col-md-4 col-md-offset-2">
-                        <a href="http://actampa.org" class="thumbnail">
-                            <img src="/assets/img/act-bus.jpg" alt="Animal Coaltion of Tampa">
-                        </a>
-                        <h3>Pets and Strays</h3>
-                        <p>Animal Coalition of Tampa has been<br>
-                            on a mission to help pets and strays -<br>
-                            we helped them raise funds on Give Day</p>
-
-                        <!-- <a href="http://actampa.org">Click to see what we did</a> -->
-                    </div>
-
-                    <div class="recent-cause col-sm-6 col-md-4">
-                        <a href="http://www.oxfamamerica.org/take-action/save-lives/nepal-earthquake/" class="thumbnail">
-                            <img src="/assets/img/nepal.jpg" alt="Earthquake in Nepal">
-                        </a>
-                        <h3>Earthquake in Nepal</h3>
-                        <p>After the devastating earthquakes<br>
-                            in Nepal, we helped raise money<br>
-                            for various aid and relief efforts</p>
-
-                        <!-- <a href="http://www.oxfamamerica.org/take-action/save-lives/nepal-earthquake/">Click to see what we did</a> -->
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div id="team" class="section section-team">
-            <div class="container">
-                <h2>Our team</h2>
-                <div class="row row-pad">
-                    <div class="col-sm-4 mugshot">
-                        <img alt="Mark" src="/assets/img/mark.png">
-                        <h3>Mark Carpenter</h3>
-                        <p>Craft beer aficionado, guitarist,<br>and resident people pleaser</p>
-                        <a href="https://www.linkedin.com/pub/mark-carpenter/25/5b0/a44"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                    </div>
-                    <div class="col-sm-4 mugshot">
-                        <img alt="Charles" src="/assets/img/charles.png">
-                        <h3>Charles Burgess</h3>
-                        <p>Our go-to tech guy, runner,<br>and dog lover</p>
-                        <a href="https://www.linkedin.com/in/cvburgess"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                        <a href="https://github.com/cvburgess"><i class="fa fa-github-square fa-2x"></i></a>
-                        <a href="https://twitter.com/cvburgess"><i class="fa fa-twitter-square fa-2x"></i></a>
-                    </div>
-                    <div class="col-sm-4 mugshot">
-                        <img alt="Dexter" src="/assets/img/dexter.png">
-                        <h3>Dexter</h3>
-                        <p>Squirrel chaser, belly-rub expert,<br>and plate cleaner</p>
-                        <a href="https://instagram.com/explore/tags/dexterburgmez/"><i class="fa fa-instagram fa-2x"></i></a>
+            <div id="steps" class="section section-steps">
+                <div class="container">
+                    <h2>How it works</h2>
+                    <div class="row row-pad">
+                        <div class="col-sm-4 how-step">
+                            <img class="step-img" src="/assets/img/discover.png">
+                            <h3>Discover</h3>
+                            <p>Every month we select a new cause<br class="hidden-xs hidden-sm">
+                                to support, everything from autisim to zebras<br><br>
+                                <!--We partner with the best charities to turn<br class="hidden-sm">
+                                your donation into action-->
+                            </p>
+                        </div>
+                        <div class="col-sm-4 how-step">
+                            <img class="step-img" src="/assets/img/donate.png">
+                            <h3>Donate</h3>
+                            <p>Give what you can, and every month<br class="hidden-xs hidden-sm">
+                                <strong>100%</strong> will go directly to the cause<br><br>
+                                <!--You can change your donation at<br class="hidden-sm">
+                                any time, because life is unpredictable-->
+                            </p>
+                        </div>
+                        <div class="col-sm-4 how-step">
+                            <img class="step-img" src="/assets/img/share.png">
+                            <h3>See and Share</h3>
+                            <p>Once the funds we raise are put to use,<br class="hidden-xs hidden-sm">
+                                you'll get an email showing the impact you made<br><br>
+                                <!--Forward to a friend so we can tackle bigger<br class="hidden-sm">
+                                causes and make a larger impact each month-->
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="social" class="section section-social">
-            <div class="container">
-                <h2>Get in touch</h2>
-                <div class="row row-pad">
-                    <div class="col-xs-12">
-                        <a href="https://www.facebook.com/SparkTheCause"><i class="fa fa-facebook-square fa-4x"></i></a>
-                        <!-- <a href="https://twitter.com/sparkthecause"><i class="fa fa-twitter-square fa-4x"></i></a> -->
-                        <a href="https://instagram.com/sparkthecause"><i class="fa fa-instagram fa-4x"></i></a>
-                        <br class="visible-xs">
-                        <!-- <a href="https://github.com/sparkthecause"><i class="fa fa-github-square fa-4x"></i></a> -->
-                        <a href="http://blog.sparkthecause.com"><i class="fa fa-rss-square fa-4x"></i></a>
-                        <a href="mailto:hello@sparkthecause.com"><i class="fa fa-envelope-square fa-4x"></i></a>
+            <div id="causes" class="section section-causes">
+                <div class="container">
+                    <h2>Causes we've supported</h2>
+                    <div class="row row-pad">
+
+                        <div class="recent-cause col-sm-6 col-md-4 col-md-offset-2">
+                            <a href="http://actampa.org" class="thumbnail">
+                                <img src="/assets/img/act-bus.jpg" alt="Animal Coaltion of Tampa">
+                            </a>
+                            <h3>Pets and Strays</h3>
+                            <p>Animal Coalition of Tampa has been<br>
+                                on a mission to help pets and strays -<br>
+                                we helped them raise funds on Give Day</p>
+
+                            <!-- <a href="http://actampa.org">Click to see what we did</a> -->
+                        </div>
+
+                        <div class="recent-cause col-sm-6 col-md-4">
+                            <a href="http://www.oxfamamerica.org/take-action/save-lives/nepal-earthquake/" class="thumbnail">
+                                <img src="/assets/img/nepal.jpg" alt="Earthquake in Nepal">
+                            </a>
+                            <h3>Earthquake in Nepal</h3>
+                            <p>After the devastating earthquakes<br>
+                                in Nepal, we helped raise money<br>
+                                for various aid and relief efforts</p>
+
+                            <!-- <a href="http://www.oxfamamerica.org/take-action/save-lives/nepal-earthquake/">Click to see what we did</a> -->
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="footer">
-            <p>Handcrafted in Tampa, FL &nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;&copy; Spark Apps Inc. 2015<p>
+            <div id="team" class="section section-team">
+                <div class="container">
+                    <h2>Our team</h2>
+                    <div class="row row-pad">
+                        <div class="col-sm-4 mugshot">
+                            <img alt="Mark" src="/assets/img/mark.png">
+                            <h3>Mark Carpenter</h3>
+                            <p>Craft beer aficionado, guitarist,<br>and resident people pleaser</p>
+                            <a href="https://www.linkedin.com/pub/mark-carpenter/25/5b0/a44"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                        </div>
+                        <div class="col-sm-4 mugshot">
+                            <img alt="Charles" src="/assets/img/charles.png">
+                            <h3>Charles Burgess</h3>
+                            <p>Our go-to tech guy, runner,<br>and dog lover</p>
+                            <a href="https://www.linkedin.com/in/cvburgess"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                            <a href="https://github.com/cvburgess"><i class="fa fa-github-square fa-2x"></i></a>
+                            <a href="https://twitter.com/cvburgess"><i class="fa fa-twitter-square fa-2x"></i></a>
+                        </div>
+                        <div class="col-sm-4 mugshot">
+                            <img alt="Dexter" src="/assets/img/dexter.png">
+                            <h3>Dexter</h3>
+                            <p>Squirrel chaser, belly-rub expert,<br>and plate cleaner</p>
+                            <a href="https://instagram.com/explore/tags/dexterburgmez/"><i class="fa fa-instagram fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="social" class="section section-social">
+                <div class="container">
+                    <h2>Get in touch</h2>
+                    <div class="row row-pad">
+                        <div class="col-xs-12">
+                            <a href="https://www.facebook.com/SparkTheCause"><i class="fa fa-facebook-square fa-4x"></i></a>
+                            <!-- <a href="https://twitter.com/sparkthecause"><i class="fa fa-twitter-square fa-4x"></i></a> -->
+                            <a href="https://instagram.com/sparkthecause"><i class="fa fa-instagram fa-4x"></i></a>
+                            <br class="visible-xs">
+                            <!-- <a href="https://github.com/sparkthecause"><i class="fa fa-github-square fa-4x"></i></a> -->
+                            <a href="http://blog.sparkthecause.com"><i class="fa fa-rss-square fa-4x"></i></a>
+                            <a href="mailto:hello@sparkthecause.com"><i class="fa fa-envelope-square fa-4x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Handcrafted in Tampa, FL &nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;&copy; Spark Apps Inc. 2015<p>
+            </div>
+
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

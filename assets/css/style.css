@@ -10,6 +10,20 @@
        url('/assets/font/Avenir-Black-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('/assets/font/Avenir-Black-webfont.svg') format('svg'); /* Legacy iOS */
 }
+
+/* BOOTSTRAP MODAL FIX */
+body.modal-open > .wrap-modal-fix {
+    overflow: hidden;
+    height: 100%;
+}
+.modal-content, .modal-dialog, .modal-body {
+    height: inherit;
+    min-height: 100%;
+}
+.modal {
+    min-height: 100%;
+}
+
 body {
     font-family: "Avenir-Roman";
     background-color: #f8f8f8;
