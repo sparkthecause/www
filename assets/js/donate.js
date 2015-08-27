@@ -1,7 +1,6 @@
-$('#cta').on('click', function(e) {
+$('#joinLink').on('click', function(e) {
 
-    // var donation = numeral( numeral().unformat( $("#cta input").val() || "5" ) );
-    // $("#donationTxt").val( donation.format("0,0.00") );
+    $('#donationModal').modal('show');
 
 });
 
