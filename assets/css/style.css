@@ -1,24 +1,61 @@
 @font-face {
-    font-family: 'Avenir';
-    src: url("/assets/Avenir.ttc");
+  font-family: 'Avenir-Roman';
+  src: url('/assets/font/Avenir-Roman-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/font/Avenir-Roman-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/font/Avenir-Roman-webfont.svg') format('svg'); /* Legacy iOS */
 }
+@font-face {
+  font-family: 'Avenir-Black';
+  src: url('/assets/font/Avenir-Black-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/assets/font/Avenir-Black-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/assets/font/Avenir-Black-webfont.svg') format('svg'); /* Legacy iOS */
+}
+
+/* BOOTSTRAP MODAL FIX */
+body.modal-open > .wrap-modal-fix {
+    overflow: hidden;
+    height: 100%;
+}
+.modal-content, .modal-dialog, .modal-body {
+    height: inherit;
+    min-height: 100%;
+}
+.modal {
+    min-height: 100%;
+}
+
 body {
-    background-color: #8e59cd;
-    font-family: "Avenir";
+    font-family: "Avenir-Roman";
+    background-color: #f8f8f8;
 }
-h1 h2 {
+h1, h2 {
+    font-family: "Avenir-Black";
     margin: 0px;
+}
+h2 {
+    font-size: 32pt;
+    padding-top: 30px;
+}
+h3 {
+    font-weight: bold;
+}
+label {
+    color: #8e59cd;
+}
+p {
+    font-size: 16px;
 }
 .navbar {
     min-height: 75px;
     padding-right: 15px;
+    /*background-color: transparent;*/
 }
 .navbar .nav > li > a {
     line-height: 75px;
     color: #8e59cd;
     display: inline;
 }
-@media( max-width: 767px ) {
+@media (max-width: 767px) {
     .navbar .nav > li > a {
         line-height: 50px;
         color: #8e59cd;
@@ -37,16 +74,20 @@ h1 h2 {
     color: #8e59cd;
 }
 .navbar-links > .in {
-    background-color: #ffffff;
+    background-color: #f8f8f8;
+}
+#navbar .active a {
+    font-weight: bolder;
+    background-color: #f8f8f8;
+    color: #8e59cd;
 }
 .section{
-    min-height: 330px;
     width: 100%;
     text-align: center;
-    padding: 30px 20px 30px 20px;
+    padding: 30px 20px 0px 20px;
 }
 .row-pad {
-    margin: 50px 0px 30px 0px;
+    margin: 50px 0px 10px 0px;
 }
 .row-pad div {
     margin-bottom: 10px;
@@ -54,32 +95,109 @@ h1 h2 {
 .section-hero-wrapper {
     display:table;
     width: 100%;
+    height: 80vh;
+
+    background-image: url(/assets/img/hero_aug_15.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-position: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 .section-hero {
-    background-color: #8e59cd;
     color: #ffffff;
     display: table-cell;
     vertical-align: middle;
-
     position: relative;
     border-top: 75px solid transparent;
     margin: -75px 0 0;
     background-clip: padding-box;
+    padding-top: 0px;
+}
+.section-hero h1 {
+    font-size: 32pt;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
+    line-height: 38pt;
+}
+@media (min-width: 768px) {
+    .section-hero h1 {
+        font-size: 42pt;
+        line-height: 48pt;
+    }
+}
+.section-hero p {
+    font-size: 14pt;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.75);
 }
 #cta {
-    color: #8e59cd;
-    border-color: #6a39a3;
-    border-width: 1px;
-    margin: 30px 0px 10px 0px;
+    margin: 50px 0px 50px 0px;
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border-width: 5px;
+    height: 80px;
+    border-color: #ffffff;
+    background-color: #8e59cd;
+    /*background: linear-gradient(to bottom, #8e59cd , #7549A9);*/
+    font-size: 28px;
 }
-#mc-embedded-subscribe, #mce-EMAIL{
-    color: #8e59cd;
+@media (min-width: 768px) {
+    #cta input {
+        max-width: 200px;
+    }
 }
-#mc_embed_signup {
-    margin: 30px 0px 10px 0px;
+#cta div[type="button"] {
+    color: #ffffff;
+    background-color: #8e59cd;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 16pt;
+    padding: 0px 30px 0px 30px;
+}
+@media (max-width: 767px) {
+    #cta div[type="button"] {
+        line-height: 24px;
+    }
+}
+.checkbox label {
+    color: #434343;
+}
+.section-cause {
+    display:table;
+    width: 100%;
+    background-color: #8e59cd;
+    color: #ffffff;
+    position: relative;
+    border-top: 75px solid transparent;
+    margin: -75px 0 0;
+    background-clip: padding-box;
+}
+.section-cause button {
+    margin: 10px 0px 52px 0px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border-width: 5px;
+    background-color: #8e59cd;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.causeImg {
+    max-width:80%;
+    max-height:400px;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: #ffffff;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+.section-cause p {
+    font-size: 16pt;
 }
 .section-steps {
-    background-color: #ffffff;
     color: #8e59cd;
 
     position: relative;
@@ -87,50 +205,156 @@ h1 h2 {
     margin: -75px 0 0;
     background-clip: padding-box;
 }
+.how-step {
+    padding-bottom: 30px;
+}
+.how-step i {
+    font-size: 80pt;
+    padding: 10px 0px 10px 0px;
+}
+.step-img {
+    height: 200px;
+    width: 200px;
+}
 .section-causes {
-    background-color: #5bcc5d;
+    background-color: #8e59cd;
     color: #ffffff;
 
     position: relative;
     border-top: 75px solid transparent;
     margin: -75px 0 0;
     background-clip: padding-box;
+}
+.section-causes a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.recent-cause {
+    padding-bottom: 30px;
 }
 .thumbnail {
     color: #8e59cd;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: #ffffff;
+    padding: 0px;
+}
+.thumbnail img {
+    border-radius: 20px;
 }
 .section-team {
-    background-color: #64adfa;
-    color: #ffffff;
+    color: #8e59cd;
 
     position: relative;
     border-top: 75px solid transparent;
     margin: -75px 0 0;
     background-clip: padding-box;
+}
+.mugshot {
+    padding-bottom: 30px;
 }
 .mugshot img {
     max-height: 175px;
 }
 .mugshot a i {
-    color: #ffffff;
+    color: #8e59cd;
     margin: 0px 5px 0px 5px;
 }
 .section-social {
-    background-color: #f0625a;
+    background-color: #8e59cd;
     color: #ffffff;
 
     position: relative;
     border-top: 65px solid transparent;
     margin: -65px 0 0;
     background-clip: padding-box;
+
+    padding-bottom: 30px;
 }
 .section-social a i {
     color: #ffffff;
-    margin: 40px 10px 10px 20px;
+    margin: 10px 10px 10px 20px;
+}
+.section-social .container .row-pad {
+    margin-top: 30px;
 }
 .footer {
     height: 75px;
     text-align: center;
-    line-height: 75px;
+    margin-top: 40px;
+    /*line-height: 75px;*/
+    color: #8e59cd;
+}
+.footer p {
+    margin-bottom: 0px;
+}
+.modal-text {
+    padding: 10px 0px 0px 0px;
+}
+
+/* ACCOUNT PAGE SPECIFIC*/
+
+.90vh {
+    height: 90vh;
+}
+
+.section-top-wrapper {
+    display:table;
+    width: 100%;
+    /*height: 90vh;*/
+
+    background-image: url(/assets/img/hero_account.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-position: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#login {
+    height: 90vh;
+}
+#manage.vh100 {
+    height: 100vh;
+}
+#loginForm {
+    background-color: #ffffff;
+    padding: 30px 20px 30px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.5);
+}
+#loginForm div {
+    margin: 0px 0px 20px 0px;
+}
+#loginForm label {
+    font-size: 20px;
+}
+#loginForm input {
+    text-align: center;
+}
+#loginForm button {
+    background-color: #8e59cd;
     color: #ffffff;
+    margin-top: 10px;
+}
+#manage button {
+    margin: 50px 0px 50px 0px;
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border-width: 5px;
+    background-color: #8e59cd;
+    color: #ffffff;
+    border-color: #ffffff;
+    height: 80px;
+}
+#paymentTxt {
+    margin-top: 6px;
+}
+.section-cause-history {
+    padding-bottom: 30px;
+}
+.section-cause-history h2 {
+    color: #8e59cd;
 }

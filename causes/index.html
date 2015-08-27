@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Spark the Cause</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/assets/css/sweetalert.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <link rel="icon" href="/assets/img/favicons/favicon-32.png" sizes="32x32">
+        <link rel="icon" href="/assets/img/favicons/favicon-96.png" sizes="96x96">
+        <link rel="apple-touch-icon-precomposed" href="/assets/img/favicons/apple-touch-icon-precomposed.png">
+        <meta name="apple-mobile-web-app-title" content="Spark">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="/assets/img/favicons/mstile-144.png">
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-62459951-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </head>
+
+    <body data-spy="scroll" data-target="#navbar">
+
+        <div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="donationModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Join the Cause</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <p class="modal-text">You're about to take the first step towards awesomeness, my friend. All you have to do is fill out the form below and decide how much you'd like to donate each month.<br><br>We take pride in giving 100% of your donation to a new, amazing cause every month, but we happily accept one-time donations too!</p>
+                                <hr>
+                            </div>
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <form class="form-horizontal" id="donationForm">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="emailTxt" placeholder="Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="passwordTxt" placeholder="Password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-xs-6 col-sm-2 control-label">Donation</label>
+                                        <label for="inputPassword3" class="col-xs-6 visible-xs control-label">Tip &nbsp;<i class="fa fa-heart"></i></label>
+                                        <div class="col-xs-6 col-sm-4">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">$</div>
+                                                <input type="number" min="1" class="form-control" id="donationTxt" placeholder="5.00" required>
+                                            </div>
+                                        </div>
+                                        <label for="inputPassword3" class="hidden-xs col-sm-2 control-label">Tip &nbsp;<i class="fa fa-heart"></i></label>
+                                        <div class="col-xs-6 col-sm-4">
+                                            <select id="tipSelect" class="form-control">
+                                                <option value="0">No tip :(</option>
+                                                <option value="0.5">$0.50</option>
+                                                <option value="1" selected>$1.00</option>
+                                                <option value="2">$2.00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p class="help-block col-sm-offset-2">Tips cover credit card fees, servers, and kibble for the pup. They also keep 100% of your donation going to the cause!</p>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <div class="checkbox">
+                                              <label>
+                                                    <input id="is_monthly" type="checkbox" checked> This is a one time donation to this cause only
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+                        <button id="donateBtn" type="button" class="btn btn-success">Donate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap-modal-fix">
+            <div class="section-hero-wrapper">
+                <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/">
+                                <img alt="Spark" src="/assets/img/logo.png">
+                            </a>
+
+                            <button type="button" class="navbar-toggle collapsed hamburger" data-toggle="collapse" data-target="#navbar-links">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar-links" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="/">Back to SparkTheCause.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div id="download" class="section section-hero">
+                    <div class="container">
+                        <div class="row row-pad">
+                            <div class="col-xs-12">
+
+                                <h1>Support classroom tech for students with SLD</h1>
+
+                                <!-- <form class="form-inline"> -->
+                                    <!-- <div class="form-group"> -->
+                                        <!-- <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label> -->
+                                        <!-- <div id="cta" class="input-group"> -->
+
+                                            <!-- <input type="text" class="form-control" id="exampleInputAmount" placeholder="$5"> -->
+                                            <button id="cta" type="button" class="btn btn-lg" data-toggle="modal" data-target="#donationModal">&nbsp;&nbsp; Join the Cause &nbsp;&nbsp;</button>
+
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                <!-- </form> -->
+
+                                <p>
+                                    We've partnered with Pepin Academies for September, read more below
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="container">
+
+                    <div class="row row-pad">
+                        <div class="col-xs-12">
+                            <p>
+                                Pepin Academies is a 501(c)(3) not-for-profit charter school that provides tuition-free education to students with identified learning and learning-related disabilities.
+                                Our first encounter with Pepin was at their Tampa campus, where we had a chance to meet with one of the school's founders, Crisha Murray-Scolaro, who taught us the difficulties students with specific learning disabilities (SLD) often face throughout their school careers.
+                                After learning about the long-term solutions Pepin Academies provides their students, we knew we had to get involved.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row row-pad">
+                        <div class="col-sm-6">
+                            <img class="step-img" src="/assets/img/09_2015/1.png">
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="step-img" src="/assets/img/09_2015/2.png">
+                        </div>
+                    </div>
+
+                    <div class="row row-pad">
+                        <div class="col-xs-12">
+                            <p>
+                                Often, kids with SLD struggle in schools that don't have the resources or full time programs to cater to their needs.
+                                Those that are lucky enough to find schools that do, eventually graduate out as they move on to middle and high school.
+                                In this environment, these kids are often susceptible to bullying, and with the schools lack of resources, their education can leave them unprepared for life after classes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row row-pad">
+                        <div class="col-sm-6">
+                            <img class="step-img" src="/assets/img/09_2015/3.png">
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="step-img" src="/assets/img/09_2015/4.png">
+                        </div>
+                    </div>
+
+                    <div class="row row-pad">
+                        <div class="col-xs-12">
+                            <p>
+                                For over fifteen years, Pepin Academies has helped hundreds of students with SLD graduate high school, go to college, and find jobs - all while spending their school careers in a safe, innovative learning environment.
+                                At Spark, we're all about using technology to create long-term solutions, which is why for the month of September, we've set our sights on empowering these students with enhanced classroom technology, so this great school can continue to change the lives of their students.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row row-pad">
+                        <div class="col-sm-6">
+                            <img class="step-img" src="/assets/img/09_2015/5.png">
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="step-img" src="/assets/img/09_2015/6.png">
+                        </div>
+                        <br><br><br>
+                    </div>
+
+                    <div class="row row-pad"></div>
+
+                </div>
+            </div>
+
+            <div id="social" class="section section-social">
+                <div class="container">
+                    <h2>Get in touch</h2>
+                    <div class="row row-pad">
+                        <div class="col-xs-12">
+                            <a href="https://www.facebook.com/SparkTheCause"><i class="fa fa-facebook-square fa-4x"></i></a>
+                            <!-- <a href="https://twitter.com/sparkthecause"><i class="fa fa-twitter-square fa-4x"></i></a> -->
+                            <a href="https://instagram.com/sparkthecause"><i class="fa fa-instagram fa-4x"></i></a>
+                            <br class="visible-xs">
+                            <!-- <a href="https://github.com/sparkthecause"><i class="fa fa-github-square fa-4x"></i></a> -->
+                            <a href="http://blog.sparkthecause.com"><i class="fa fa-rss-square fa-4x"></i></a>
+                            <a href="mailto:hello@sparkthecause.com"><i class="fa fa-envelope-square fa-4x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Handcrafted in Tampa, FL <span class="hidden-xs">&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;&copy;</span><br class="visible-xs"> Spark Apps Inc. 2015</p>
+            </div>
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+        <script src="https://checkout.stripe.com/checkout.js"></script>
+        <script src="/assets/js/sweetalert.min.js"></script>
+        <script src="/assets/js/donate.js"></script>
+    </body>
+</html>

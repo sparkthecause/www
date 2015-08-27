@@ -1,0 +1,141 @@
+<div>
+    <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Edit Your Account</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <p class="modal-text">Need help? &nbsp;Send us an email at <a href="mailto:support@sparkthecause.com">support@sparkthecause.com</a></p>
+                            <hr>
+                        </div>
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <form class="form-horizontal" id="accountForm">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="emailTxt" placeholder="Email" value="{{email}}" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="passwordTxt" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-xs-6 col-sm-2 control-label">Donation</label>
+                                    <label for="inputPassword3" class="col-xs-6 visible-xs control-label">Tip &nbsp;<i class="fa fa-heart"></i></label>
+                                    <div class="col-xs-6 col-sm-4">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">$</div>
+                                            <input type="number" min="1" class="form-control" id="donationTxt" placeholder="5.00" value="{{dollars donation}}" required>
+                                        </div>
+                                    </div>
+                                    <label for="inputPassword3" class="hidden-xs col-sm-2 control-label">Tip &nbsp;<i class="fa fa-heart"></i></label>
+                                    <div class="col-xs-6 col-sm-4">
+                                        <select id="tipSelect" class="form-control">
+                                            <option value="0" {{selected '0' tip}}>No tip :(</option>
+                                            <option value="0.5" {{selected '50' tip}}>$0.50</option>
+                                            <option value="1" {{selected '100' tip}}>$1.00</option>
+                                            <option value="2" {{selected '200' tip}}>$2.00</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <p class="help-block col-sm-offset-2">Tips cover credit card fees, servers, and kibble for the pup. They also keep 100% of your donation going to the cause!</p>
+
+                                <div class="form-group">
+                                    <label for="inputCC" class="col-sm-2 control-label">Payment</label>
+                                    <div class="col-sm-10">
+                                        <p id="paymentTxt">{{source_name}} ending in ...{{source_last_four}} &nbsp;&nbsp; <a href="#" id="newCardBtn">Use a different card</a></p>
+                                        <input type="hidden" class="form-control" id="tokenTxt">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+                    <button id="updateBtn" type="button" class="btn btn-success">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap-modal-fix">
+        <div class="section-top-wrapper">
+            <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">
+                            <img alt="Spark" src="/assets/img/logo.png">
+                        </a>
+
+                        <button type="button" class="navbar-toggle collapsed hamburger" data-toggle="collapse" data-target="#navbar-links">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar-links" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/">Back to SparkTheCause.com</a></li>
+                            <li><a id="logoutBtn" style="color: #5a5a5a;" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="manage" class="section section-hero">
+                <div class="container">
+                    <div class="row row-pad">
+                        <div class="col-xs-12">
+
+                            <h1>Thank you for donating <br>${{dollars donation}} + ${{dollars tip}} tip</h1>
+                            <button id="manageBtn" type="button" class="btn btn-lg" data-toggle="modal" data-target="#accountModal">&nbsp;&nbsp;Manage My Account&nbsp;&nbsp;</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cause-history" class="section section-cause-history">
+        <div class="container">
+            <h2>Causes You've Supported</h2>
+            <div class="row row-pad">
+                <div class="col-xs-12">
+                    <p>None yet, but we're just getting started!</p>
+                    <br>
+                    <p><em><strong>Note:</strong> We usually bill at the end of the month.<br>
+                        If you support this month's cause, it will appear here <strong>next month</strong>.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="social" class="section section-social">
+        <div class="container">
+            <h2>Get in touch</h2>
+            <div class="row row-pad">
+                <div class="col-xs-12">
+                    <a href="https://www.facebook.com/SparkTheCause"><i class="fa fa-facebook-square fa-4x"></i></a>
+                    <!-- <a href="https://twitter.com/sparkthecause"><i class="fa fa-twitter-square fa-4x"></i></a> -->
+                    <a href="https://instagram.com/sparkthecause"><i class="fa fa-instagram fa-4x"></i></a>
+                    <br class="visible-xs">
+                    <!-- <a href="https://github.com/sparkthecause"><i class="fa fa-github-square fa-4x"></i></a> -->
+                    <a href="http://blog.sparkthecause.com"><i class="fa fa-rss-square fa-4x"></i></a>
+                    <a href="mailto:hello@sparkthecause.com"><i class="fa fa-envelope-square fa-4x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
