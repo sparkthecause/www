@@ -135,22 +135,12 @@ p {
     margin: 50px 0px 50px 0px;
     box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-}
-#cta * {
     border-width: 5px;
     height: 80px;
     border-color: #ffffff;
-}
-#cta input {
-    color: #8e59cd;
-    background-color: #f8f8f8;
-    box-shadow: inset 2px 2px 2px 0px #dddddd;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    font-size: 24pt;
-    font-weight: bold;
-    text-align: center;
-    min-width: 75px;
+    background-color: #8e59cd;
+    /*background: linear-gradient(to bottom, #8e59cd , #7549A9);*/
+    font-size: 28px;
 }
 @media (min-width: 768px) {
     #cta input {
