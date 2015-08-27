@@ -184,7 +184,7 @@ p {
     background-clip: padding-box;
 }
 .section-cause button {
-    margin: 10px 0px 30px 0px;
+    margin: 10px 0px 52px 0px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     border-width: 5px;
@@ -291,7 +291,8 @@ p {
 .footer {
     height: 75px;
     text-align: center;
-    line-height: 75px;
+    margin-top: 40px;
+    /*line-height: 75px;*/
     color: #8e59cd;
 }
 .footer p {
