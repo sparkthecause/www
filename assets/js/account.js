@@ -13,6 +13,8 @@ $(document).ready(function() {
 
     if ( emailCookie && passwordCookie ) {
         login( emailCookie, passwordCookie );
+    } else {
+        $("#content").render( "login" );
     }
 
 });
@@ -84,11 +86,13 @@ function login( email, password ) {
         })
         .fail( function() {
             sweetAlert("Whoops!", "We ran into an issue grabbing your account info. We're really sorry! Please refresh the page and try again or contact us for a helping hand.", "warning");
+            $("#content").render( "login" );
         });
 
     })
     .fail( function() {
         sweetAlert("Whoops!", "That email address and password don't seem to match", "warning");
+        $("#content").render( "login" );
     });
 
 }

@@ -279,9 +279,8 @@ p {
     margin-top: 30px;
 }
 .footer {
-    height: 75px;
     text-align: center;
-    margin-top: 40px;
+    margin: 25px 0px 25px 0px;
     /*line-height: 75px;*/
     color: #8e59cd;
 }
