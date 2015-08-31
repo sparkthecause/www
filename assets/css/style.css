@@ -24,6 +24,10 @@ body.modal-open > .wrap-modal-fix {
     min-height: 100%;
 }
 
+.sweet-alert input {
+    text-align: center;
+}
+
 body {
     font-family: "Avenir-Roman";
     background-color: #f8f8f8;

@@ -19,11 +19,45 @@ $(document).ready(function() {
 
 });
 
-$('#loginBtn').on('click', function(e) {
+$(document).on( 'click', '#forgotBtn', function() {
+
+    swal({
+        title: "Forgot your password?",
+        text: "Send a password reset email to:",
+        type: "input",
+        showCancelButton: true,
+        inputValue: $("#emailTxt").val(),
+        confirmButtonText: "Send Email"
+    }, function( inputValue ) {
+
+        if ( inputValue === false ) return false;
+
+        if (inputValue === "") {
+            swal.showInputError("You need to write something!");
+            return false
+        }
+
+        $.ajax({
+            "type": "GET",
+            "url": "https://api.sparkthecause.com/v1/reset?email=" + inputValue,
+        }).done( function( response ) {
+
+            swal( "Sent!", "Check your email ( " + inputValue + " ) for a password reset link.", "success");
+
+        })
+        .fail( function() {
+
+            sweetAlert("Whoops!", "That email address isn't in our system.", "warning");
+
+        });
+
+    });
+
+});
+
+$(document).on( 'click', '#loginBtn', function() {
 
     if ( validateLoginForm() ) {
-
-        e.preventDefault();
 
         login( $("#emailTxt").val(), $("#passwordTxt").val() );
 
@@ -92,7 +126,13 @@ function login( email, password ) {
     })
     .fail( function() {
         sweetAlert("Whoops!", "That email address and password don't seem to match", "warning");
-        $("#content").render( "login" );
+
+        Cookies.remove( "email" );
+        Cookies.remove( "password" );
+
+        $("#content").render( "login", {
+            "email": $("#emailTxt").val()
+        });
     });
 
 }
