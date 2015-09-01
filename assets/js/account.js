@@ -8,13 +8,30 @@ $(document).ready(function() {
         return ( value1.toString() === value2.toString() ) ? ' selected' : '';
     });
 
-    var emailCookie = Cookies.get( "email" );
-    var passwordCookie = Cookies.get( "password" );
+    queryObject = {};
 
-    if ( emailCookie && passwordCookie ) {
-        login( emailCookie, passwordCookie );
-    } else {
-        $("#content").render( "login" );
+    if ( window.location.search.length > 1 ) {
+        for (var aItKey, nKeyId = 0, aCouples = window.location.search.substr(1).split("&"); nKeyId < aCouples.length; nKeyId++) {
+            aItKey = aCouples[nKeyId].split("=");
+            queryObject[decodeURIComponent(aItKey[0])] = aItKey.length > 1 ? decodeURIComponent(aItKey[1]) : "";
+        }
+    }
+
+    if ( queryObject.email && queryObject.token ) { // forgotten password
+
+        $("#content").render( "reset" );
+
+    } else { // normal login
+
+        var emailCookie = Cookies.get( "email" );
+        var passwordCookie = Cookies.get( "password" );
+
+        if ( emailCookie && passwordCookie ) {
+            login( emailCookie, passwordCookie );
+        } else {
+            $("#content").render( "login" );
+        }
+
     }
 
 });
@@ -55,7 +72,43 @@ $(document).on( 'click', '#forgotBtn', function() {
 
 });
 
-$(document).on( 'click', '#loginBtn', function() {
+$(document).on( 'click', '#resetPasswordBtn', function( e ) {
+
+    e.preventDefault();
+
+    $.ajax({
+        "type": "POST",
+        "url": "https://api.sparkthecause.com/v1/reset",
+        "dataType": 'json',
+        "data": {
+            "email": queryObject.email,
+            "token": queryObject.token,
+            "password": $("#passwordTxt").val()
+        },
+    }).done( function( response ) {
+
+        swal({
+            "title": "Saved!",
+            "text": "Click 'ok' to go to your account.",
+            "type": "success"
+        }, function() {
+
+            login( queryObject.email, $("#passwordTxt").val() );
+
+        });
+
+    })
+    .fail( function() {
+
+        sweetAlert( "Whoops!", "Could not change your password. Please refresh and try again or send us an email ( support@sparkthecause.com ).", "warning" );
+
+    });
+
+});
+
+$(document).on( 'click', '#loginBtn', function( e ) {
+
+    e.preventDefault();
 
     if ( validateLoginForm() ) {
 

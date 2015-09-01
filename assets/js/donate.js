@@ -34,6 +34,10 @@ var handler = StripeCheckout.configure({
                 "type": "success",
                 "html": true
             });
+
+            Cookies.set( "email", $("#emailTxt").val(), { expires: 14 } );
+            Cookies.set( "password", $("#passwordTxt").val(), { expires: 14 } );
+
         })
         .fail( function() {
             sweetAlert("Whoops!", "Something went wrong during signup. Don't worry, your card has not been charged. Try refreshing the page and trying again, or contact us and we would be happy to help you out.", "warning");
