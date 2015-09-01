@@ -24,6 +24,10 @@ body.modal-open > .wrap-modal-fix {
     min-height: 100%;
 }
 
+.sweet-alert input {
+    text-align: center;
+}
+
 body {
     font-family: "Avenir-Roman";
     background-color: #f8f8f8;
@@ -279,9 +283,8 @@ p {
     margin-top: 30px;
 }
 .footer {
-    height: 75px;
     text-align: center;
-    margin-top: 40px;
+    margin: 25px 0px 25px 0px;
     /*line-height: 75px;*/
     color: #8e59cd;
 }
