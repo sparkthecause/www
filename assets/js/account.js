@@ -8,7 +8,7 @@ $(document).ready(function() {
         return ( value1.toString() === value2.toString() ) ? ' selected' : '';
     });
 
-    queryObject = {}
+    queryObject = {};
 
     if ( window.location.search.length > 1 ) {
         for (var aItKey, nKeyId = 0, aCouples = window.location.search.substr(1).split("&"); nKeyId < aCouples.length; nKeyId++) {
