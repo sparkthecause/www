@@ -4,6 +4,12 @@ $('#joinLink').on('click', function(e) {
 
 });
 
+$('#cta.mobex').on('click', function(e) {
+
+    document.location = "http://mobex.biz/signup";
+
+});
+
 $('#is_monthly').on('click', function(e) {
 
     var donateBtnTxt = ( $('#is_monthly').is(":checked") ) ? "Donate" : "Donate Monthly";
