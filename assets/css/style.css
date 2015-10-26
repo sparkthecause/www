@@ -31,6 +31,8 @@ body.modal-open > .wrap-modal-fix {
 body {
     font-family: "Avenir-Roman";
     background-color: #f8f8f8;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
 }
 h1, h2 {
     font-family: "Avenir-Black";
@@ -128,8 +130,6 @@ p {
     display: table-cell;
     vertical-align: middle;
     position: relative;
-    border-top: 75px solid transparent;
-    margin: -75px 0 0;
     background-clip: padding-box;
     padding-top: 0px;
 }
@@ -282,7 +282,6 @@ p {
     margin: 0px 5px 0px 5px;
 }
 .section-social {
-    background-color: #8e59cd;
     color: #ffffff;
 
     position: relative;
@@ -321,7 +320,7 @@ p {
 .section-top-wrapper {
     display:table;
     width: 100%;
-    /*height: 90vh;*/
+    height: 100vh;
 
     background-image: url(/assets/img/hero_account.jpg);
     background-repeat: no-repeat;
